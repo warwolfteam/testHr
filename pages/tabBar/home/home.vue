@@ -1,12 +1,8 @@
 <template>
 	<view class="container">
 		<view class="home-search-area">
-			<!-- <u-icon class="quanguo"
-				@click="canceSearch"
-				name="arrow-left"
-				color="#2979ff"
-				size="38"></u-icon> -->
-			<view class="city">{{currentCity}}</view>
+			<view class="city"
+				@click="showCitySelect">{{currentCity}}</view>
 			<u-search placeholder="搜索岗位任务"
 				margin="15px"
 				:show-action="fasle"
@@ -41,9 +37,14 @@
 	export default {
 		data() {
 			return {
-				navTittle: "首页",
+				// 搜索框默认值
 				keyword: "",
+				// 弹出层判断条件
+				// 显示搜索层
 				showSearch: false,
+				//显示城市选择层
+				showCitySelect: false,
+				// 城市显示默认值
 				currentCity: "全国"
 			}
 		},
