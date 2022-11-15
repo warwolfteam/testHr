@@ -2,7 +2,7 @@
 	<view class="container">
 		<view class="home-search-area">
 			<view class="city"
-				@click="showCitySelect">{{currentCity}}</view>
+				@click="onCitySelect">{{currentCity}}</view>
 			<u-search placeholder="搜索岗位任务"
 				margin="15px"
 				:show-action="fasle"
@@ -10,8 +10,33 @@
 				@click="openShowSearch">
 			</u-search>
 		</view>
-		<view class="classificationFiltering">
-		</view>
+		<u-sticky>
+			<!-- 只能有一个根元素 -->
+			<view class="classificationFiltering">
+				<view class="lbotton">
+					<u-button @click="onZongHeBotton"
+						size="mini"
+						:shape="square"
+						:custom-style="zongHeBottonStyle">综合</u-button>
+					<u-button @click="onZuiXineBotton"
+						size="mini"
+						:shape="square"
+						:custom-style="zuiXinBottonStyle">最新</u-button>
+				</view>
+				<view class="rbotton">
+					<u-button @click="onGanWeiBotton"
+						size="mini"
+						:shape="square"
+						:custom-style="otherBottonStyle">岗位分类<u-icon name="grid"></u-icon>
+					</u-button>
+					<u-button @click="onShaiXuanBotton"
+						size="mini"
+						:shape="square"
+						:custom-style="otherBottonStyle">筛选<u-icon name="grid"></u-icon>
+					</u-button>
+				</view>
+			</view>
+		</u-sticky>
 		<!-- 以下为弹出层 -->
 		<u-popup v-model="showSearch"
 			mode="center"
@@ -30,7 +55,10 @@
 				</u-search>
 			</view>
 		</u-popup>
-		<!-- <u-button @click="showSearch = true">打开</u-button> -->
+		<u-select v-model="showCitySelect"
+			mode="mutil-column-auto"
+			:list="cityList"
+			@confirm="submitCitySelect"></u-select>
 	</view>
 </template>
 <script>
@@ -45,7 +73,63 @@
 				//显示城市选择层
 				showCitySelect: false,
 				// 城市显示默认值
-				currentCity: "全国"
+				currentCity: "全国",
+				bottonActive: true,
+				// 按钮样式
+				zongHeBottonStyle: {
+					marginTop: '5rpx', // 注意驼峰命名，并且值必须用引号包括，因为这是对象
+					marginBotton: '5rpx', // 注意驼峰命名，并且值必须用引号包括，因为这是对象 
+					marginRight: '20rpx',
+					color: 'blue'
+				},
+				zuiXinBottonStyle: {
+					marginTop: '5rpx', // 注意驼峰命名，并且值必须用引号包括，因为这是对象
+					marginBotton: '5rpx', // 注意驼峰命名，并且值必须用引号包括，因为这是对象 
+					marginRight: '20rpx',
+					color: 'blue'
+				},
+				otherBottonStyle: {
+					marginTop: '5rpx', // 注意驼峰命名，并且值必须用引号包括，因为这是对象
+					marginBotton: '5rpx', // 注意驼峰命名，并且值必须用引号包括，因为这是对象 
+					marginRight: '20rpx',
+					color: 'blue'
+				},
+				cityList: [{
+					value: 1,
+					label: '中国',
+					children: [{
+						value: 2,
+						label: '广东',
+						children: [{
+							value: 3,
+							label: '深圳'
+						}, {
+							value: 4,
+							label: '广州'
+						}]
+					}, {
+						value: 5,
+						label: '广西',
+						children: [{
+							value: 6,
+							label: '南宁'
+						}, {
+							value: 7,
+							label: '桂林'
+						}]
+					}]
+				}, {
+					value: 8,
+					label: '美国',
+					children: [{
+						value: 9,
+						label: '纽约',
+						children: [{
+							value: 10,
+							label: '皇后街区'
+						}]
+					}]
+				}]
 			}
 		},
 		methods: {
@@ -54,18 +138,48 @@
 			},
 			canceSearch() {
 				this.showSearch = false;
-			}
+			},
+			// 以下为点击按钮激活弹出层按钮
+			onZongHeBotton() {
+				console.log("点击综合按钮");
+				this.zongHeBottonStyle.color = "red";
+				this.zuiXinBottonStyle.color = "blue";
+			},
+			onZuiXineBotton() {
+				console.log("点击最新按钮");
+				this.zongHeBottonStyle.color = "blue";
+				this.zuiXinBottonStyle.color = "red";
+			},
+			onGanWeiBotton() {
+				console.log("点击岗位分类按钮");
+			},
+			onShaiXuanBotton() {
+				console.log("点击筛选按钮");
+			},
+			onCitySelect() {
+				console.log("点击切换城市按钮");
+				this.showCitySelect = true;
+			},
+			submitCitySelect(e) {
+				console.log("输出选择结果", e);
+				console.log("输出选择结果名称", e[e.length - 1].label);
+				this.currentCity = e[e.length - 1].label
+				
+			},
 		}
 	}
 </script>
 <style lang="scss"
 	scoped>
 	.container {
-		background-color: #fff;
+		background-color: #cccccc47;
+		height: 200vh;
 
+		// margin-top: 150rpx;
 		.home-search-area {
 			padding: 5rpx;
 			display: flex;
+			background-color: #fff;
 
 			.city {
 				align-self: center;
@@ -74,7 +188,25 @@
 			}
 		}
 
-		.classificationFiltering {}
+		.classificationFiltering {
+			width: 100%;
+			height: 120rpx;
+			background-color: #fff;
+			color: #2979ff;
+			padding: 8rpx;
+			padding-top: 30rpx;
+
+			// align-self: center;
+			.lbotton {
+				margin-left: 50rpx;
+				float: left;
+			}
+
+			.rbotton {
+				margin-right: 30rpx;
+				float: right;
+			}
+		}
 
 		// background-color: #ccc;
 		.u-popup-search-area {
