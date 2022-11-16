@@ -53,6 +53,9 @@
 					v-model="keyword">
 				</u-search>
 			</view>
+			<view class="u-popup-search-body">
+				<z-zhiwei-list :dataList="zZhiweiData"></z-zhiwei-list>
+			</view>
 		</u-popup>
 		<well-tree-select @doConfirm="doConfirmCategorys"
 			:showDialog.sync="showGanWeiSelect"
@@ -198,7 +201,7 @@
 				shaiXuanRenWuList: homeData.shaiXuanRenWuList,
 				shaiXuanGanWeiList: homeData.shaiXuanGanWeiList,
 				cityList: homeData.cityList,
-				zZhiweiData:homeData.zZhiweiData.data.list,
+				zZhiweiData: homeData.zZhiweiData.data.list,
 			}
 		},
 		methods: {
@@ -311,6 +314,11 @@
 			.sIcon {
 				align-self: center;
 			}
+		}
+
+		.u-popup-search-body {
+			padding: 10rpx;
+			background-color: #cccccc47;
 		}
 
 		.u-popup-shaiXuan-area {
