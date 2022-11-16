@@ -38,7 +38,10 @@
 		<view class="zhiWeiList">
 			<view class="zhiWei-head">
 				<view class="zhiWei-tittle"> 兼职清洁 </view>
-				<view class="zhiWei-money">555元/人 </view>
+				<view class="zhiWei-money">
+					<view class="zhiWei-yuan">555 </view>
+					<view class="zhiWei-miaosu">元/人 </view>
+				</view>
 			</view>
 			<view class="zhiWei-biaoqian">
 				<view class="zhiWei-fuli">
@@ -359,11 +362,24 @@
 				.zhiWei-tittle {
 					float: left;
 					margin-top: 10rpx;
+					padding-left: 20rpx;
 				}
 
 				.zhiWei-money {
 					float: right;
+					padding-right: 20rpx;
 					margin-top: 10rpx;
+					display: flex;
+
+					.zhiWei-yuan {
+						align-items: center;
+						color: #ff9800;
+					}
+
+					.zhiWei-miaosu {
+						align-items: center;
+						color: #ccc
+					}
 				}
 			}
 
@@ -372,22 +388,26 @@
 
 				.zhiWei-fuli {
 					float: left;
+					padding-left: 20rpx;
 				}
 
 				.zhiWei-fanxian {
 					float: right;
+					padding-right: 20rpx;
 				}
 			}
 
 			.zhiWei-xingzhi {
 				float: left;
 				margin-top: 10rpx;
+				padding-left: 20rpx;
 			}
 
 			.zhiWei-jindu-all {
 				margin-top: 30rpx;
 				float: left;
 				width: 100%;
+				padding-left: 20rpx;
 
 				.zhiWei-jindu {
 					display: flex;
