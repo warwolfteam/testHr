@@ -3411,6 +3411,11 @@ export default {
 		"zhaopingjindu": 37,
 		"enterpriseName": "常州某电商",
 		"releaseTime": "2022-11-19",
+		"fanyongxinxi": {
+			"tips": "•满7天返400元 •满15天再返500元 •满30天再返600元",
+			"fanYongMoney": "999",
+			"jiwsuantiaojian": "到岗+质保30天"
+		},
 		"fulilist": [{
 			id: 0,
 			text: "高薪岗位",

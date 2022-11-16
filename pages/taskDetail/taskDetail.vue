@@ -1,6 +1,7 @@
 <template>
 	<view class="container">
-		<view class="zhiWeiList">
+		<!-- 任务基本信息 -->
+		<view class="zhiWei">
 			<view class="zhiWei-head">
 				<view class="zhiWei-tittle">{{ item.name }}</view>
 			</view>
@@ -30,6 +31,59 @@
 				</view>
 			</view>
 		</view>
+		<!-- 任务返佣信息 -->
+		<view class="fanyong">
+			<view class="fanyong-head">
+				<view class="fanyong-tittle">佣金</view>
+				<view class="fanyong-tip">
+					<u-icon @click="onFanYongTip()"
+						name="question-circle"
+						color="#9e9e9e"
+						size="40"></u-icon>
+				</view>
+			</view>
+			<view class="fanyong-img"
+				:style="{backgroundImage:                             
+				        'url('+imageURL+')'}">
+				<view class="fanyong-money"> 一次性返 <span class="onmoney"> {{ item.fanyongxinxi.fanYongMoney }}元</span>/人
+				</view>
+				<view class="fanyong-tips"> {{ item.fanyongxinxi.tips }} </view>
+			</view>
+			<view class="fanyong-jiesuan">
+				<span>结算条件： {{ item.fanyongxinxi.jiwsuantiaojian }}</span>
+			</view>
+		</view>
+		<!-- 任务岗位详情 -->
+		<view class="ganwei">
+			<view class="ganwei-tittle">岗位详情</view>
+			<view class="ganwei-zhiwei">客服</view>
+			<view class="ganwei-xinzifuli">薪资福利</view>
+			<view class="wrap">
+				<u-row gutter="16">
+					<u-col span="6">
+						<view class="demo-layout bg-purple"></view>
+					</u-col>
+					<u-col span="6">
+						<view class="demo-layout bg-purple-light"></view>
+					</u-col>
+				</u-row>
+				<u-row gutter="16">
+					<u-col span="6">
+						<view class="demo-layout bg-purple"></view>
+					</u-col>
+					<u-col span="6">
+						<view class="demo-layout bg-purple-light"></view>
+					</u-col>
+				</u-row>
+				<u-row gutter="16">
+					<u-col span="6">
+						<view class="demo-layout bg-purple"></view>
+					</u-col>
+				</u-row>
+			</view>
+		</view>
+		<!-- 以下为弹出层 -->
+		<u-toast ref="fanYongToast" />
 	</view>
 </template>
 <script>
@@ -37,7 +91,8 @@
 	export default {
 		data() {
 			return {
-				item: homeData.teskDetaildata
+				item: homeData.teskDetaildata,
+				imageURL: '/static/fanyongdetail.png'
 			}
 		},
 		onLoad: function(option) {
@@ -45,7 +100,19 @@
 			console.log("option.id:", option.id);
 			console.log("this.item:", this.item);
 		},
-		methods: {}
+		methods: {
+			onFanYongTip() {
+				console.log("点击返佣提示按钮");
+				this.showFanYongToast();
+			},
+			showFanYongToast() {
+				console.log("触发提示");
+				this.$refs.fanYongToast.show({
+					title: '候选人过保后一次性返费',
+					type: "info"
+				})
+			}
+		}
 	}
 </script>
 <style>
@@ -55,11 +122,39 @@
 </style>
 <style lang="scss"
 	scoped>
+	.wrap {
+		padding: 24rpx;
+	}
+
+	.u-row {
+		margin-top: 40rpx;
+		margin-bottom: 40rpx;
+		margin-left: 10rpx;
+		margin-right: 10rpx;
+	}
+
+	.demo-layout {
+		height: 80rpx;
+		border-radius: 8rpx;
+	}
+
+	.bg-purple {
+		background: #d3dce6;
+	}
+
+	.bg-purple-light {
+		background: #e5e9f2;
+	}
+
+	.bg-purple-dark {
+		background: #99a9bf;
+	}
+
 	.container {
 		width: 100%;
-		height: 200vh;
 
-		.zhiWeiList {
+		// height: 200vh;
+		.zhiWei {
 			margin-bottom: 20rpx;
 			margin-left: 20rpx;
 			margin-right: 20rpx;
@@ -124,6 +219,106 @@
 						align-items: center;
 					}
 				}
+			}
+		}
+
+		.fanyong {
+			margin-bottom: 20rpx;
+			margin-left: 20rpx;
+			margin-right: 20rpx;
+			margin-top: 30rpx;
+			height: 360rpx;
+			background-color: #fff;
+			border-radius: 15px;
+
+			.fanyong-head {
+				width: 100%;
+
+				.fanyong-tittle {
+					height: 50rpx;
+					font-size: 18px;
+					font-weight: 1000;
+					margin-top: 30rpx;
+					padding-left: 20rpx;
+					float: left;
+				}
+
+				.fanyong-tip {
+					float: right;
+					height: 50rpx;
+					margin-top: 30rpx;
+					padding-right: 20rpx;
+				}
+			}
+
+			.fanyong-img {
+				float: left;
+				height: 200rpx;
+				width: 100%;
+				padding-top: 90rpx;
+
+				.fanyong-money {
+					color: #ffffff;
+					font-size: 32rpx;
+					margin-left: 60rpx;
+
+					.onmoney {
+						padding: 10rpx;
+						font-size: 48rpx;
+					}
+				}
+
+				.fanyong-tips {
+					color: #ffffff;
+					font-size: 20rpx;
+					margin-left: 60rpx;
+				}
+			}
+
+			.fanyong-jiesuan {
+				float: left;
+				width: 100%;
+				padding-top: 30rpx;
+				margin-left: 30rpx;
+			}
+		}
+
+		.ganwei {
+			margin-bottom: 20rpx;
+			margin-left: 20rpx;
+			margin-right: 20rpx;
+			margin-top: 30rpx;
+			height: 1360rpx;
+			background-color: #fff;
+			border-radius: 15px;
+
+			.ganwei-tittle {
+				height: 50rpx;
+				font-size: 18px;
+				font-weight: 1000;
+				margin-top: 30rpx;
+				padding-left: 20rpx;
+				float: left;
+			}
+
+			.ganwei-zhiwei {
+				color: #ffaa00;
+				width: 100%;
+				height: 50rpx;
+				font-size: 16px;
+				font-weight: 1000;
+				margin-top: 30rpx;
+				padding-left: 20rpx;
+				float: left;
+			}
+
+			.ganwei-xinzifuli {
+				width: 100%;
+				height: 50rpx;
+				font-size: 14px;
+				margin-top: 30rpx;
+				padding-left: 20rpx;
+				float: left;
 			}
 		}
 	}
