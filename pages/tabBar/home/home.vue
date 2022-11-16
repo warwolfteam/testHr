@@ -35,7 +35,9 @@
 				</view>
 			</view>
 		</u-sticky>
-		<z-zhiwei-list :dataList="zZhiweiData"></z-zhiwei-list>
+		<view class="zhiwei-body">
+			<z-zhiwei-list :dataList="zZhiweiData"></z-zhiwei-list>
+		</view>
 		<!-- 以下为弹出层 -->
 		<u-popup v-model="showSearch"
 			mode="center"
@@ -271,8 +273,8 @@
 	scoped>
 	.container {
 		background-color: #cccccc47;
-		height: 200vh;
 
+		// height: 200vh;
 		// margin-top: 150rpx;
 		.home-search-area {
 			padding: 5rpx;
@@ -304,6 +306,10 @@
 				margin-right: 30rpx;
 				float: right;
 			}
+		}
+
+		.zhiwei-body {
+			padding: 10rpx;
 		}
 
 		// background-color: #ccc;
