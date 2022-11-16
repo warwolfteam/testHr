@@ -1,9 +1,22 @@
 export default {
 	"zhiweidata": [{
+		'label': '全部',
+		'value': '1e0ec80931f24b2d944119bb069a6064',
+		'children': [{
+			'label': '全部',
+			'value': '1e0ec80931f24b2d944119bb069a6064',
+		}]
+	}, {
 		'label': '技术',
 		'children': [{
+			'label': '全部',
+			'value': '1e0ec80931f24b2d944119bb069a6064',
+		}, {
 			'label': '后端开发',
 			'children': [{
+				'label': '全部',
+				'value': '1e0ec80931f24b2d944119bb069a6064',
+			}, {
 				'value': '1e0ec80931f24b2d944119bb069a6064',
 				'label': '后端开发'
 			}, {
@@ -76,6 +89,9 @@ export default {
 		}, {
 			'label': '移动开发',
 			'children': [{
+				'label': '全部',
+				'value': '1e0ec80931f24b2d944119bb069a6064',
+			}, {
 				'value': '31f3cfea7f2f4311bac988f93a69f002',
 				'label': '移动开发'
 			}, {
@@ -109,6 +125,9 @@ export default {
 		}, {
 			'label': '测试',
 			'children': [{
+				'label': '全部',
+				'value': '1e0ec80931f24b2d944119bb069a6064',
+			}, {
 				'value': '48c590ec09474928b4f5c37ec965674a',
 				'label': '测试工程师'
 			}, {
@@ -139,6 +158,9 @@ export default {
 		}, {
 			'label': '运维/技术支持',
 			'children': [{
+				'label': '全部',
+				'value': '1e0ec80931f24b2d944119bb069a6064',
+			}, {
 				'value': '5cc7d0eb8a6b4dbaa5769241e0d631a6',
 				'label': '运维工程师'
 			}, {
@@ -169,6 +191,9 @@ export default {
 		}, {
 			'label': '数据',
 			'children': [{
+				'label': '全部',
+				'value': '1e0ec80931f24b2d944119bb069a6064',
+			}, {
 				'value': '806fbb7a16114e0b88ff5c55082142d6',
 				'label': '数据'
 			}, {
@@ -196,6 +221,9 @@ export default {
 		}, {
 			'label': '项目管理',
 			'children': [{
+				'label': '全部',
+				'value': '1e0ec80931f24b2d944119bb069a6064',
+			}, {
 				'value': '22755de8a06d48dea9cd460a8784e282',
 				'label': '项目经理'
 			}, {
@@ -220,6 +248,9 @@ export default {
 		}, {
 			'label': '硬件开发',
 			'children': [{
+				'label': '全部',
+				'value': '1e0ec80931f24b2d944119bb069a6064',
+			}, {
 				'value': 'f78f43082e4c4f11bf72351278e85e46',
 				'label': '硬件'
 			}, {
@@ -271,6 +302,9 @@ export default {
 		}, {
 			'label': '前端开发',
 			'children': [{
+				'label': '全部',
+				'value': '1e0ec80931f24b2d944119bb069a6064',
+			}, {
 				'value': '113ac531d6d647f688b90a615384acb1',
 				'label': '前端开发'
 			}, {
@@ -289,6 +323,9 @@ export default {
 		}, {
 			'label': '通信',
 			'children': [{
+				'label': '全部',
+				'value': '1e0ec80931f24b2d944119bb069a6064',
+			}, {
 				'value': 'f5ea855390074a8a829559f9cc8009d8',
 				'label': '通信技术工程师'
 			}, {
@@ -346,6 +383,9 @@ export default {
 		}, {
 			'label': '电子/半导体',
 			'children': [{
+				'label': '全部',
+				'value': '1e0ec80931f24b2d944119bb069a6064',
+			}, {
 				'value': 'dcb9605526a848daacc73410311c8789',
 				'label': '电子工程师'
 			}, {
@@ -361,6 +401,9 @@ export default {
 		}, {
 			'label': '高端技术职位',
 			'children': [{
+				'label': '全部',
+				'value': '1e0ec80931f24b2d944119bb069a6064',
+			}, {
 				'value': 'a110dcea726d469c8151d2deaf799935',
 				'label': '高端技术职位'
 			}, {
@@ -388,6 +431,9 @@ export default {
 		}, {
 			'label': '人工智能',
 			'children': [{
+				'label': '全部',
+				'value': '1e0ec80931f24b2d944119bb069a6064',
+			}, {
 				'value': '0164340352e7463a932cc191ffd0e5ad',
 				'label': '人工智能'
 			}, {
@@ -415,6 +461,9 @@ export default {
 		}, {
 			'label': '软件销售支持',
 			'children': [{
+				'label': '全部',
+				'value': '1e0ec80931f24b2d944119bb069a6064',
+			}, {
 				'value': 'aa5d8a3e40bb4190a2b6be302109ab67',
 				'label': '软件销售支持'
 			}, {
@@ -434,6 +483,9 @@ export default {
 	}, {
 		'label': '产品',
 		'children': [{
+			'label': '全部',
+			'value': '1e0ec80931f24b2d944119bb069a6064',
+		}, {
 			'label': '产品经理',
 			'children': [{
 				'value': '8c9874dc20ba428a8cdc417d7c72d06f',
@@ -463,6 +515,9 @@ export default {
 		}, {
 			'label': '高端产品职位',
 			'children': [{
+				'label': '全部',
+				'value': '1e0ec80931f24b2d944119bb069a6064',
+			}, {
 				'value': '6096adbfa85f46bca92f22586588d86f',
 				'label': '高端产品职位'
 			}, {
@@ -478,6 +533,9 @@ export default {
 		}, {
 			'label': '其他产品职位',
 			'children': [{
+				'label': '全部',
+				'value': '1e0ec80931f24b2d944119bb069a6064',
+			}, {
 				'value': '5e27018026b54fa1b519abb11c182a0a',
 				'label': '其他产品职位'
 			}]
@@ -485,6 +543,9 @@ export default {
 	}, {
 		'label': '设计',
 		'children': [{
+			'label': '全部',
+			'value': '1e0ec80931f24b2d944119bb069a6064',
+		}, {
 			'label': '视觉设计',
 			'children': [{
 				'value': '3399954098d947c58023fe592d8e2b01',
@@ -556,6 +617,9 @@ export default {
 		}, {
 			'label': '交互设计',
 			'children': [{
+				'label': '全部',
+				'value': '1e0ec80931f24b2d944119bb069a6064',
+			}, {
 				'value': 'fb9073655e364482a2c7c43759279656',
 				'label': '交互设计师'
 			}, {
@@ -571,6 +635,9 @@ export default {
 		}, {
 			'label': '用户研究',
 			'children': [{
+				'label': '全部',
+				'value': '1e0ec80931f24b2d944119bb069a6064',
+			}, {
 				'value': '4fde9d5a6adc4a4886afed6bc2876f1c',
 				'label': '数据分析师'
 			}, {
@@ -592,6 +659,9 @@ export default {
 		}, {
 			'label': '高端设计职位',
 			'children': [{
+				'label': '全部',
+				'value': '1e0ec80931f24b2d944119bb069a6064',
+			}, {
 				'value': '40a3c101ef96494b8b6535300119bc01',
 				'label': '高端设计职位'
 			}, {
@@ -616,6 +686,9 @@ export default {
 		}, {
 			'label': '非视觉设计',
 			'children': [{
+				'label': '全部',
+				'value': '1e0ec80931f24b2d944119bb069a6064',
+			}, {
 				'value': '6f5e05334dbb419595651a9a792bb143',
 				'label': '非视觉设计'
 			}, {
@@ -649,6 +722,9 @@ export default {
 		}, {
 			'label': '其他设计职位',
 			'children': [{
+				'label': '全部',
+				'value': '1e0ec80931f24b2d944119bb069a6064',
+			}, {
 				'value': '81e3eb5d0cbc4161b8b1c884f50200c6',
 				'label': '其他设计职位'
 			}]
@@ -656,6 +732,9 @@ export default {
 	}, {
 		'label': '运营',
 		'children': [{
+			'label': '全部',
+			'value': '1e0ec80931f24b2d944119bb069a6064',
+		}, {
 			'label': '运营',
 			'children': [{
 				'value': 'bf24e74a9c1c49a7b7140bae81fcc659',
