@@ -1,0 +1,149 @@
+.well-dialog {
+  .well-dialog__mask {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 10;
+    background: rgba(0, 0, 0, 0.4);
+    display: none;
+  }
+
+  .well-dialog__container {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    /*height: 30%;*/
+    background: white;
+    transform: translateY(150%);
+    transition: all 0.4s ease;
+    z-index: 12;
+  }
+
+  &.well-dialog--show {
+    .well-dialog__mask {
+      display: block;
+    }
+
+    .well-dialog__container {
+      transform: translateY(0);
+    }
+  }
+}
+
+
+.tree-select-contain {
+  height: 502px;
+  overflow: hidden;
+
+  .header {
+    height: 45px;
+    line-height: 45px;
+    font-size: 15px;
+    border-bottom: 1px solid #E9E9E9;
+    padding: 0 16px;
+
+    .caption {
+      color: #1D1B33;
+      float: left;
+      font-weight: 600;
+    }
+
+    .action {
+      color: #0083FF;
+      float: right;
+    }
+  }
+
+  .con {
+    height: calc(100% - 46px);
+    width: 100%;
+
+    &.width-per150 {
+      width: 150%;
+
+      .col {
+        width: 33.3333333%;
+
+        &:last-child {
+          border-right: none;
+          width: 33.3333333%;
+        }
+      }
+    }
+
+    .col {
+      height: 100%;
+      float: left;
+      width: 50%;
+      border-right: 1px solid #E9E9E9;
+      box-sizing: border-box;
+      /*padding: 0 0 0 16px;*/
+
+      ul {
+        width: 100%;
+        height: calc(100% - 40px);
+
+        li {
+          width: 100%;
+          box-sizing: border-box;
+
+          padding: 0 10px 0 16px;
+          /*width: 100%;*/
+          color: #1D1B33;
+          font-size: 16px;
+          height: 45px;
+          line-height: 45px;
+          position: relative;
+          overflow: hidden;
+          white-space: nowrap;
+          text-overflow: ellipsis;
+          -webkit-text-overflow: ellipsis;
+
+          .label-font {
+            width: calc(100% - 16px);
+            box-sizing: border-box;
+
+            overflow: hidden;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+            -webkit-text-overflow: ellipsis;
+          }
+
+          icon {
+            position: absolute;
+            right: 6px;
+            top: 10px;
+
+          }
+
+          //margin: 10px 0;
+          &:first-child {
+            ///margin-top: 20px;
+          }
+
+          &:last-child {
+            //margin-bottom: 20px;
+          }
+
+          &.selected {
+            color: #0083FF;
+            opacity: .5;
+          }
+
+          &.active {
+            color: #0083FF;
+            opacity: 1 !important;
+          }
+        }
+      }
+
+      &:last-child {
+        border-right: none;
+        width: calc(50% - 16px);
+      }
+    }
+  }
+
+}

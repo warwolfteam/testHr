@@ -16,22 +16,18 @@
 				<view class="lbotton">
 					<u-button @click="onZongHeBotton"
 						size="mini"
-						:shape="square"
 						:custom-style="zongHeBottonStyle">综合</u-button>
 					<u-button @click="onZuiXineBotton"
 						size="mini"
-						:shape="square"
 						:custom-style="zuiXinBottonStyle">最新</u-button>
 				</view>
 				<view class="rbotton">
 					<u-button @click="onGanWeiBotton"
 						size="mini"
-						:shape="square"
 						:custom-style="otherBottonStyle">岗位分类<u-icon name="grid"></u-icon>
 					</u-button>
 					<u-button @click="onShaiXuanBotton"
 						size="mini"
-						:shape="square"
 						:custom-style="otherBottonStyle">筛选<u-icon name="grid"></u-icon>
 					</u-button>
 				</view>
@@ -55,6 +51,13 @@
 				</u-search>
 			</view>
 		</u-popup>
+		<well-tree-select @doConfirm="doConfirmCategorys"
+			:showDialog.sync="showGanWeiSelect"
+			:data="ganWeiSelectList"
+			:title-text="'选择职位'"
+			:max-selected="1"
+			:selected-values="ganWeiSelectedIds">
+		</well-tree-select>
 		<u-select v-model="showCitySelect"
 			mode="mutil-column-auto"
 			:list="cityList"
@@ -62,7 +65,12 @@
 	</view>
 </template>
 <script>
+	import wellTreeSelect from '@/components/well-treeSelect/well-treeSelect.vue';
+	import zhiweidata from '@/common/zhiweidata.js'
 	export default {
+		components: {
+			wellTreeSelect
+		},
 		data() {
 			return {
 				// 搜索框默认值
@@ -72,6 +80,7 @@
 				showSearch: false,
 				//显示城市选择层
 				showCitySelect: false,
+				showGanWeiSelect: false,
 				// 城市显示默认值
 				currentCity: "全国",
 				bottonActive: true,
@@ -94,6 +103,8 @@
 					marginRight: '20rpx',
 					color: 'blue'
 				},
+				ganWeiSelectedIds: ['2-1-2'],
+				ganWeiSelectList: zhiweidata.zhiweidata,
 				cityList: [{
 					value: 1,
 					label: '中国',
@@ -152,6 +163,16 @@
 			},
 			onGanWeiBotton() {
 				console.log("点击岗位分类按钮");
+				this.showGanWeiSelect = true;
+				console.log("this.showGanWeiSelect:", this.showGanWeiSelect);
+			},
+			doConfirmCategorys(items) {
+				let arr = [];
+				for (let i = 0; i < items.length; i++) {
+					arr.push(items[i].label);
+				}
+				this.selectedItemsStr = arr.join(',');
+				console.log("doConfirmCategorys", this.selectedItemsStr);
 			},
 			onShaiXuanBotton() {
 				console.log("点击筛选按钮");
@@ -164,7 +185,6 @@
 				console.log("输出选择结果", e);
 				console.log("输出选择结果名称", e[e.length - 1].label);
 				this.currentCity = e[e.length - 1].label
-				
 			},
 		}
 	}
