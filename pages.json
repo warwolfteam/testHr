@@ -13,7 +13,7 @@
 			"style": {
 				"navigationBarTitleText": "首页",
 				"app-plus": {
-					"titleNView": false
+					"titleNView": true
 				}
 			}
 		}, {
@@ -21,7 +21,7 @@
 			"style": {
 				"navigationBarTitleText": "订单",
 				"app-plus": {
-					"titleNView": false
+					"titleNView": true
 				}
 			}
 		}, {
@@ -29,8 +29,14 @@
 			"style": {
 				"navigationBarTitleText": "我的",
 				"app-plus": {
-					"titleNView": false
+					"titleNView": true
 				}
+			}
+		}, {
+			"path": "pages/taskDetail/taskDetail",
+			"style": {
+				"navigationBarTitleText": "任务详情",
+				"enablePullDownRefresh": false
 			}
 		}
 	],
@@ -48,7 +54,7 @@
 		"navigationBarTitleText": "TestHr",
 		"navigationBarTextStyle": "white",
 		"navigationBarBackgroundColor": "#ffaa00",
-		"backgroundColor": "#F8F8F8",
+		"backgroundColor": "#cccccc",
 		"backgroundColorTop": "#F4F5F6",
 		"backgroundColorBottom": "#F4F5F6",
 		"mp-360": {

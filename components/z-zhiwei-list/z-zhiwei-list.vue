@@ -2,7 +2,8 @@
 	<view class="container">
 		<view class="zhiWeiList"
 			v-for="(item, index)  in dataList"
-			:key="index">
+			:key="index"
+			@click="toDetail(item)">
 			<view class="zhiWei-head">
 				<view class="zhiWei-tittle">{{ item.name }}</view>
 				<view class="zhiWei-money">
@@ -71,6 +72,14 @@
 		},
 		mounted() {
 			console.log(this.dataList);
+		},
+		methods: {
+			toDetail(item) {
+				console.log("点击事件触发toDetail--item：", item);
+				uni.redirectTo({
+					url: "/pages/taskDetail/taskDetail?id=" + item.id
+				})
+			}
 		}
 	}
 </script>
@@ -78,14 +87,17 @@
 	scoped>
 	.zhiWeiList {
 		margin: 20rpx;
-		height: 350rpx;
-		background: #fff;
+		height: 360rpx;
+		background-color: #fff;
+		border-radius: 15px;
 
 		.zhiWei-head {
 			// margin-top: 50rpx;
 			padding: 10rpx;
 
 			.zhiWei-tittle {
+				font-size: 18px;
+				font-weight: 1000;
 				float: left;
 				margin-top: 10rpx;
 				padding-left: 20rpx;
@@ -120,6 +132,7 @@
 
 				.zhiWei-fuli-list {
 					align-items: center;
+					margin-right: 10rpx;
 				}
 			}
 
