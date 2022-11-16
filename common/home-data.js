@@ -3088,4 +3088,66 @@ export default {
 		checked: false,
 		disabled: false
 	}],
+	zZhiweiData: {
+		"msg": "任务列表",
+		"time": "1668579185",
+		"data": {
+			"page": 1,
+			"size": 20,
+			"list": [{
+				"id": 0,
+				"name": "兼职清洁2",
+				"money": 555,
+				"moneyType": "元/人",
+				"fanxian": "长期返",
+				"area": "全国",
+				"peopleNumber": "20人",
+				"taskMoney": "5-10K",
+				"taskMoneyType": "元/月",
+				"zhaopingjindu": 37,
+				"enterpriseName": "常州某电商",
+				"releaseTime": "2022-11-19",
+				"fulilist": [{
+					id: 0,
+					text: "高薪岗位",
+					type: "info",
+					mode: "light"
+				}, {
+					id: 1,
+					text: "工作环境好",
+					type: "info",
+					mode: "light"
+				}, {
+					id: 2,
+					text: "兼职",
+					type: "success",
+					mode: "light"
+				}]
+			}, {
+				"id": 1,
+				"name": "兼职清洁3",
+				"money": "***",
+				"moneyType": "元/人",
+				"fanxian": "返三个月",
+				"area": "赣州",
+				"peopleNumber": "260人",
+				"taskMoney": "15-80K",
+				"taskMoneyType": "元/月",
+				"zhaopingjindu": 99,
+				"enterpriseName": "赣州某电商",
+				"releaseTime": "2022-11-29",
+				"fulilist": [{
+					id: 1,
+					text: "社保",
+					type: "error",
+					mode: "light"
+				}, {
+					id: 2,
+					text: "兼职",
+					type: "success",
+					mode: "light"
+				}]
+			}]
+		}
+	},
 }
