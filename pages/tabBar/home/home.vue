@@ -43,16 +43,44 @@
 			<view class="zhiWei-biaoqian">
 				<view class="zhiWei-fuli">
 					<u-tag text="高薪岗位"
-						mode="dark" />
+						type="info"
+						mode="light" />
 					<u-tag text="工作环境好"
+						type="info"
 						mode="light" />
 					<u-tag text="兼职"
-						mode="plain" />
+						type="success"
+						mode="light" />
 				</view>
 				<view class="zhiWei-fanxian">
 					<u-tag text="长期返"
-						mode="plain" />
+						type="warning"
+						mode="light" />
 				</view>
+			</view>
+			<view class="zhiWei-xingzhi"> 全国|20人|薪酬5-10K 元/月 </view>
+			<view class="zhiWei-jindu-all">
+				<view class="zhiWei-jindu">
+					<view class="zhiWei-jindu-tittle"> 招聘进度：37% </view>
+					<view class="zhiWei-jindu-line">
+						<u-line-progress :striped="true"
+							:percent="70"
+							:striped-active="true"></u-line-progress>
+					</view>
+				</view>
+			</view>
+			<view class="zhiWei-line">
+				<u-line color="#9e9e9e" />
+			</view>
+			<view class="zhiWei-footer">
+				<view class="zhiWei-qiyexinxi">
+					<view class="zhiWei-qiyexinxi-icon">
+						<u-icon size="30"
+							name="home"></u-icon>
+					</view>
+					<view class="zhiWei-qiyexinxi-text"> 常州某电商 </view>
+				</view>
+				<view class="zhiWei-time"> 2022-11-14 </view>
 			</view>
 		</view>
 		<!-- 以下为弹出层 -->
@@ -321,31 +349,88 @@
 
 		.zhiWeiList {
 			margin: 20rpx;
-			// width: 100%;
-			height: 300rpx;
+			height: 350rpx;
 			background: #fff;
 
 			.zhiWei-head {
-				margin-top: 50rpx;
+				// margin-top: 50rpx;
+				padding: 10rpx;
 
 				.zhiWei-tittle {
-					margin-top: 50rpx;
+					float: left;
+					margin-top: 10rpx;
 				}
 
 				.zhiWei-money {
-					margin-top: 50rpx;
+					float: right;
+					margin-top: 10rpx;
 				}
 			}
 
-			.zhiWei-biaoQian {
+			.zhiWei-biaoqian {
 				margin-top: 50rpx;
 
 				.zhiWei-fuli {
-					margin-top: 50rpx;
+					float: left;
 				}
 
 				.zhiWei-fanxian {
-					margin-top: 50rpx;
+					float: right;
+				}
+			}
+
+			.zhiWei-xingzhi {
+				float: left;
+				margin-top: 10rpx;
+			}
+
+			.zhiWei-jindu-all {
+				margin-top: 30rpx;
+				float: left;
+				width: 100%;
+
+				.zhiWei-jindu {
+					display: flex;
+
+					.zhiWei-jindu-tittle {
+						align-items: center;
+						margin-right: 5%;
+					}
+
+					.zhiWei-jindu-line {
+						width: 60%;
+						align-items: center;
+					}
+				}
+			}
+
+			.zhiWei-line {
+				margin-top: 220rpx;
+				padding: 20rpx;
+				float: inherit;
+			}
+
+			.zhiWei-footer {
+				// margin-top: 10rpx;
+				padding: 20rpx;
+
+				.zhiWei-qiyexinxi {
+					float: left;
+					// margin-top: 10rpx;
+					display: flex;
+
+					.zhiWei-qiyexinxi-icon {
+						align-items: center;
+					}
+
+					.zhiWei-qiyexinxi-text {
+						align-items: center;
+					}
+				}
+
+				.zhiWei-time {
+					float: right;
+					// margin-top: 10rpx;
 				}
 			}
 		}
