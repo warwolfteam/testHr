@@ -35,57 +35,7 @@
 				</view>
 			</view>
 		</u-sticky>
-		<view class="zhiWeiList">
-			<view class="zhiWei-head">
-				<view class="zhiWei-tittle"> 兼职清洁 </view>
-				<view class="zhiWei-money">
-					<view class="zhiWei-yuan">555 </view>
-					<view class="zhiWei-miaosu">元/人 </view>
-				</view>
-			</view>
-			<view class="zhiWei-biaoqian">
-				<view class="zhiWei-fuli">
-					<u-tag text="高薪岗位"
-						type="info"
-						mode="light" />
-					<u-tag text="工作环境好"
-						type="info"
-						mode="light" />
-					<u-tag text="兼职"
-						type="success"
-						mode="light" />
-				</view>
-				<view class="zhiWei-fanxian">
-					<u-tag text="长期返"
-						type="warning"
-						mode="light" />
-				</view>
-			</view>
-			<view class="zhiWei-xingzhi"> 全国|20人|薪酬5-10K 元/月 </view>
-			<view class="zhiWei-jindu-all">
-				<view class="zhiWei-jindu">
-					<view class="zhiWei-jindu-tittle"> 招聘进度：37% </view>
-					<view class="zhiWei-jindu-line">
-						<u-line-progress :striped="true"
-							:percent="70"
-							:striped-active="true"></u-line-progress>
-					</view>
-				</view>
-			</view>
-			<view class="zhiWei-line">
-				<u-line color="#9e9e9e" />
-			</view>
-			<view class="zhiWei-footer">
-				<view class="zhiWei-qiyexinxi">
-					<view class="zhiWei-qiyexinxi-icon">
-						<u-icon size="30"
-							name="home"></u-icon>
-					</view>
-					<view class="zhiWei-qiyexinxi-text"> 常州某电商 </view>
-				</view>
-				<view class="zhiWei-time"> 2022-11-14 </view>
-			</view>
-		</view>
+		<z-zhiwei-list :dataList="zZhiweiData"></z-zhiwei-list>
 		<!-- 以下为弹出层 -->
 		<u-popup v-model="showSearch"
 			mode="center"
@@ -199,10 +149,12 @@
 </template>
 <script>
 	import wellTreeSelect from '@/components/well-treeSelect/well-treeSelect.vue';
+	import zZhiweiList from '@/components/z-zhiwei-list/z-zhiwei-list.vue'
 	import homeData from '@/common/home-data.js'
 	export default {
 		components: {
-			wellTreeSelect
+			wellTreeSelect,
+			zZhiweiList
 		},
 		data() {
 			return {
@@ -245,7 +197,8 @@
 				shaiXuanXuQiuList: homeData.shaiXuanXuQiuList,
 				shaiXuanRenWuList: homeData.shaiXuanRenWuList,
 				shaiXuanGanWeiList: homeData.shaiXuanGanWeiList,
-				cityList: homeData.cityList
+				cityList: homeData.cityList,
+				zZhiweiData:homeData.zZhiweiData.data.list,
 			}
 		},
 		methods: {
@@ -347,111 +300,6 @@
 			.rbotton {
 				margin-right: 30rpx;
 				float: right;
-			}
-		}
-
-		.zhiWeiList {
-			margin: 20rpx;
-			height: 350rpx;
-			background: #fff;
-
-			.zhiWei-head {
-				// margin-top: 50rpx;
-				padding: 10rpx;
-
-				.zhiWei-tittle {
-					float: left;
-					margin-top: 10rpx;
-					padding-left: 20rpx;
-				}
-
-				.zhiWei-money {
-					float: right;
-					padding-right: 20rpx;
-					margin-top: 10rpx;
-					display: flex;
-
-					.zhiWei-yuan {
-						align-items: center;
-						color: #ff9800;
-					}
-
-					.zhiWei-miaosu {
-						align-items: center;
-						color: #ccc
-					}
-				}
-			}
-
-			.zhiWei-biaoqian {
-				margin-top: 50rpx;
-
-				.zhiWei-fuli {
-					float: left;
-					padding-left: 20rpx;
-				}
-
-				.zhiWei-fanxian {
-					float: right;
-					padding-right: 20rpx;
-				}
-			}
-
-			.zhiWei-xingzhi {
-				float: left;
-				margin-top: 10rpx;
-				padding-left: 20rpx;
-			}
-
-			.zhiWei-jindu-all {
-				margin-top: 30rpx;
-				float: left;
-				width: 100%;
-				padding-left: 20rpx;
-
-				.zhiWei-jindu {
-					display: flex;
-
-					.zhiWei-jindu-tittle {
-						align-items: center;
-						margin-right: 5%;
-					}
-
-					.zhiWei-jindu-line {
-						width: 60%;
-						align-items: center;
-					}
-				}
-			}
-
-			.zhiWei-line {
-				margin-top: 220rpx;
-				padding: 20rpx;
-				float: inherit;
-			}
-
-			.zhiWei-footer {
-				// margin-top: 10rpx;
-				padding: 20rpx;
-
-				.zhiWei-qiyexinxi {
-					float: left;
-					// margin-top: 10rpx;
-					display: flex;
-
-					.zhiWei-qiyexinxi-icon {
-						align-items: center;
-					}
-
-					.zhiWei-qiyexinxi-text {
-						align-items: center;
-					}
-				}
-
-				.zhiWei-time {
-					float: right;
-					// margin-top: 10rpx;
-				}
 			}
 		}
 
