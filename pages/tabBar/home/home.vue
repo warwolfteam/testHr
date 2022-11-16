@@ -24,15 +24,37 @@
 				<view class="rbotton">
 					<u-button @click="onGanWeiBotton"
 						size="mini"
-						:custom-style="otherBottonStyle">岗位分类<u-icon name="grid"></u-icon>
+						:custom-style="otherBottonStyle">岗位分类<u-icon size="30"
+							name="grid"></u-icon>
 					</u-button>
 					<u-button @click="onShaiXuanBotton"
 						size="mini"
-						:custom-style="otherBottonStyle">筛选<u-icon name="grid"></u-icon>
+						:custom-style="otherBottonStyle">筛选<u-icon size="30"
+							name="calendar"></u-icon>
 					</u-button>
 				</view>
 			</view>
 		</u-sticky>
+		<view class="zhiWeiList">
+			<view class="zhiWei-head">
+				<view class="zhiWei-tittle"> 兼职清洁 </view>
+				<view class="zhiWei-money">555元/人 </view>
+			</view>
+			<view class="zhiWei-biaoqian">
+				<view class="zhiWei-fuli">
+					<u-tag text="高薪岗位"
+						mode="dark" />
+					<u-tag text="工作环境好"
+						mode="light" />
+					<u-tag text="兼职"
+						mode="plain" />
+				</view>
+				<view class="zhiWei-fanxian">
+					<u-tag text="长期返"
+						mode="plain" />
+				</view>
+			</view>
+		</view>
 		<!-- 以下为弹出层 -->
 		<u-popup v-model="showSearch"
 			mode="center"
@@ -58,6 +80,86 @@
 			:max-selected="1"
 			:selected-values="ganWeiSelectedIds">
 		</well-tree-select>
+		<u-popup v-model="showShaiXuan"
+			mode="center"
+			width="100%"
+			height="100%">
+			<view class="u-popup-shaiXuan-area">
+				<view class="sIcon">
+					<u-icon @click="canceShaiXuan"
+						name="arrow-left"
+						color="#2979ff"
+						size="38"></u-icon>
+				</view>
+				<view class="s-shaiXuan-body">
+					<view class="box-area-body">
+						<p class="p-title">结算方式</p>
+						<view class="box-area">
+							<u-checkbox-group @change="shaiXuanCheckboxGroupChange"
+								max="1">
+								<u-checkbox @change="shaiXuanCheckboxChange"
+									v-model="item.checked"
+									v-for="(item, index) in shaiXuanJieSuanList"
+									:key="index"
+									:name="item.name">{{item.name}}</u-checkbox>
+							</u-checkbox-group>
+						</view>
+					</view>
+					<view class="box-area-body">
+						<p class="p-title">需求人数</p>
+						<view class="box-area">
+							<u-checkbox-group @change="shaiXuanCheckboxGroupChange"
+								max="1">
+								<u-checkbox @change="shaiXuanCheckboxChange"
+									v-model="item.checked"
+									v-for="(item, index) in shaiXuanXuQiuList"
+									:key="index"
+									:name="item.name">{{item.name}}</u-checkbox>
+							</u-checkbox-group>
+						</view>
+					</view>
+					<view class="box-area-body">
+						<p class="p-title">任务亮点</p>
+						<view class="box-area">
+							<u-checkbox-group @change="shaiXuanCheckboxGroupChange">
+								<u-checkbox @change="shaiXuanCheckboxChange"
+									v-model="item.checked"
+									v-for="(item, index) in shaiXuanRenWuList"
+									:key="index"
+									:name="item.name">{{item.name}}</u-checkbox>
+							</u-checkbox-group>
+						</view>
+					</view>
+					<view class="box-area-body">
+						<p class="p-title">岗位薪酬</p>
+						<view class="box-input">
+							<u-input placeholder="自定最低薪酬"
+								v-model="lowMoney"
+								type="number"
+								border="true" />
+							<p class="p-line">--</p>
+							<u-input placeholder="自定最高薪酬"
+								v-model="highMoney"
+								type="number"
+								border="true" />
+						</view>
+						<view class="box-area">
+							<u-checkbox-group @change="shaiXuanCheckboxGroupChange"
+								max="1">
+								<u-checkbox @change="shaiXuanCheckboxChange"
+									v-model="item.checked"
+									v-for="(item, index) in shaiXuanGanWeiList"
+									:key="index"
+									:name="item.name">{{item.name}}</u-checkbox>
+							</u-checkbox-group>
+						</view>
+					</view>
+				</view>
+				<view class="s-shaiXuan-button">
+					<u-button @click="shaiXuanCheckedSubmit">确定</u-button>
+				</view>
+			</view>
+		</u-popup>
 		<u-select v-model="showCitySelect"
 			mode="mutil-column-auto"
 			:list="cityList"
@@ -66,7 +168,7 @@
 </template>
 <script>
 	import wellTreeSelect from '@/components/well-treeSelect/well-treeSelect.vue';
-	import zhiweidata from '@/common/zhiweidata.js'
+	import homeData from '@/common/home-data.js'
 	export default {
 		components: {
 			wellTreeSelect
@@ -81,6 +183,7 @@
 				//显示城市选择层
 				showCitySelect: false,
 				showGanWeiSelect: false,
+				showShaiXuan: false,
 				// 城市显示默认值
 				currentCity: "全国",
 				bottonActive: true,
@@ -104,43 +207,14 @@
 					color: 'blue'
 				},
 				ganWeiSelectedIds: ['2-1-2'],
-				ganWeiSelectList: zhiweidata.zhiweidata,
-				cityList: [{
-					value: 1,
-					label: '中国',
-					children: [{
-						value: 2,
-						label: '广东',
-						children: [{
-							value: 3,
-							label: '深圳'
-						}, {
-							value: 4,
-							label: '广州'
-						}]
-					}, {
-						value: 5,
-						label: '广西',
-						children: [{
-							value: 6,
-							label: '南宁'
-						}, {
-							value: 7,
-							label: '桂林'
-						}]
-					}]
-				}, {
-					value: 8,
-					label: '美国',
-					children: [{
-						value: 9,
-						label: '纽约',
-						children: [{
-							value: 10,
-							label: '皇后街区'
-						}]
-					}]
-				}]
+				ganWeiSelectList: homeData.zhiweidata,
+				lowMoney: "",
+				highMoney: "",
+				shaiXuanJieSuanList: homeData.shaiXuanJieSuanList,
+				shaiXuanXuQiuList: homeData.shaiXuanXuQiuList,
+				shaiXuanRenWuList: homeData.shaiXuanRenWuList,
+				shaiXuanGanWeiList: homeData.shaiXuanGanWeiList,
+				cityList: homeData.cityList
 			}
 		},
 		methods: {
@@ -176,6 +250,23 @@
 			},
 			onShaiXuanBotton() {
 				console.log("点击筛选按钮");
+				this.showShaiXuan = true;
+			},
+			canceShaiXuan() {
+				this.showShaiXuan = false;
+			},
+			// 选中某个复选框时，由checkbox时触发
+			shaiXuanCheckboxChange(e) {
+				console.log(e);
+			},
+			// 选中任一checkbox时，由checkbox-group触发
+			shaiXuanCheckboxGroupChange(e) {
+				console.log(e);
+			},
+			// 提交选项
+			shaiXuanCheckedSubmit() {
+				this.canceShaiXuan();
+				console.log("点击确定按钮");
 			},
 			onCitySelect() {
 				console.log("点击切换城市按钮");
@@ -228,6 +319,37 @@
 			}
 		}
 
+		.zhiWeiList {
+			margin: 20rpx;
+			// width: 100%;
+			height: 300rpx;
+			background: #fff;
+
+			.zhiWei-head {
+				margin-top: 50rpx;
+
+				.zhiWei-tittle {
+					margin-top: 50rpx;
+				}
+
+				.zhiWei-money {
+					margin-top: 50rpx;
+				}
+			}
+
+			.zhiWei-biaoQian {
+				margin-top: 50rpx;
+
+				.zhiWei-fuli {
+					margin-top: 50rpx;
+				}
+
+				.zhiWei-fanxian {
+					margin-top: 50rpx;
+				}
+			}
+		}
+
 		// background-color: #ccc;
 		.u-popup-search-area {
 			padding: 30rpx;
@@ -235,6 +357,44 @@
 
 			.sIcon {
 				align-self: center;
+			}
+		}
+
+		.u-popup-shaiXuan-area {
+			padding: 10rpx;
+
+			.sIcon {
+				height: 130rpx;
+			}
+
+			.s-shaiXuan-body {
+				margin: 20rpx;
+
+				.box-area-body {
+					margin-top: 20rpx;
+
+					.p-title {
+						margin-top: 10rpx;
+					}
+
+					.box-input {
+						margin-top: 30rpx;
+						display: flex;
+
+						.p-line {
+							width: 50rpx;
+							margin: 20rpx;
+						}
+					}
+
+					.box-area {
+						margin-top: 20rpx;
+					}
+				}
+			}
+
+			.s-shaiXuan-button {
+				margin-top: 200rpx;
 			}
 		}
 	}

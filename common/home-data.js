@@ -2963,5 +2963,129 @@ export default {
 				'label': '社工'
 			}]
 		}]
-	}]
+	}],
+	cityList: [{
+		value: 1,
+		label: '中国',
+		children: [{
+			value: 2,
+			label: '广东',
+			children: [{
+				value: 3,
+				label: '深圳'
+			}, {
+				value: 4,
+				label: '广州'
+			}]
+		}, {
+			value: 5,
+			label: '广西',
+			children: [{
+				value: 6,
+				label: '南宁'
+			}, {
+				value: 7,
+				label: '桂林'
+			}]
+		}]
+	}, {
+		value: 8,
+		label: '美国',
+		children: [{
+			value: 9,
+			label: '纽约',
+			children: [{
+				value: 10,
+				label: '皇后街区'
+			}]
+		}]
+	}],
+	shaiXuanJieSuanList: [{
+		name: '一次性返',
+		checked: false,
+		disabled: false
+	}, {
+		name: '长期返',
+		checked: false,
+		disabled: false
+	}],
+	shaiXuanXuQiuList: [{
+		name: '10人以下',
+		checked: false,
+		disabled: false
+	}, {
+		name: '10-50人',
+		checked: false,
+		disabled: false
+	}, {
+		name: '50-100人',
+		checked: false,
+		disabled: false
+	}, {
+		name: '100人以上',
+		checked: false,
+		disabled: false
+	}],
+	shaiXuanRenWuList: [{
+		name: '有提成',
+		checked: false,
+		disabled: false
+	}, {
+		name: '社保',
+		checked: false,
+		disabled: false
+	}, {
+		name: '日结工资',
+		checked: false,
+		disabled: false
+	}, {
+		name: '提供住宿',
+		checked: false,
+		disabled: false
+	}, {
+		name: '周末双休',
+		checked: false,
+		disabled: false
+	}, {
+		name: '包工作餐',
+		checked: false,
+		disabled: false
+	}, {
+		name: '月休四天',
+		checked: false,
+		disabled: false
+	}, {
+		name: '做一休一',
+		checked: false,
+		disabled: false
+	}],
+	shaiXuanGanWeiList: [{
+		name: '元/小时',
+		checked: false,
+		disabled: false
+	}, {
+		name: '元/天',
+		checked: false,
+		disabled: false
+	}, {
+		name: '元/月',
+		checked: false,
+		disabled: false
+	}, {
+		name: '元/次',
+		checked: false,
+		disabled: false
+	}, {
+		name: '元/件',
+		checked: false,
+		disabled: false
+	}, {
+		name: '元/单',
+		checked: false,
+		disabled: false
+	}, {
+		name: '元/字',
+		checked: false,
+		disabled: false
+	}],
 }
