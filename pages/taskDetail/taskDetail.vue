@@ -259,13 +259,23 @@
 	}
 
 	.col-layout-tittle {
-		height: 40rpx;
+		/* #ifdef H5 */
+		height: 17px;
+		/* #endif */
+		/* #ifndef H5 */
+		height: 36rpx;
+		/* #endif */
 		border-radius: 8rpx;
 		color: #9aa1a8;
 	}
 
 	.col-layout-info {
+		/* #ifdef H5 */
+		height: 22px;
+		/* #endif */
+		/* #ifndef H5 */
 		height: 60rpx;
+		/* #endif */
 		border-radius: 8rpx;
 		color: #000000;
 	}
@@ -285,7 +295,6 @@
 	.container {
 		width: 100%;
 
-		// height: 200vh;
 		.zhiWei {
 			margin-bottom: 20rpx;
 			margin-left: 20rpx;
@@ -420,12 +429,22 @@
 			margin-left: 20rpx;
 			margin-right: 20rpx;
 			margin-top: 30rpx;
+			/* #ifdef H5 */
+			height: 1250px;
+			/* #endif */
+			/* #ifndef H5 */
 			height: 1800rpx;
+			/* #endif */
 			background-color: #fff;
 			border-radius: 15px;
 
 			.ganwei-tittle {
+				/* #ifdef H5 */
+				height: 20px;
+				/* #endif */
+				/* #ifndef H5 */
 				height: 50rpx;
+				/* #endif */
 				font-size: 18px;
 				font-weight: 1000;
 				margin-top: 30rpx;
@@ -436,7 +455,12 @@
 			.ganwei-zhiwei {
 				color: #ffaa00;
 				width: 100%;
+				/* #ifdef H5 */
+				height: 30px;
+				/* #endif */
+				/* #ifndef H5 */
 				height: 50rpx;
+				/* #endif */
 				font-size: 16px;
 				font-weight: 1000;
 				margin-top: 30rpx;
@@ -446,7 +470,12 @@
 
 			.ganwei-info-fuli {
 				width: 100%;
+				/* #ifdef H5 */
+				height: 200px;
+				/* #endif */
+				/* #ifndef H5 */
 				height: 280rpx;
+				/* #endif */
 				font-size: 14px;
 				margin-top: 30rpx;
 				padding-left: 20rpx;
@@ -454,7 +483,12 @@
 
 				.ganwei-info-tittle {
 					width: 100%;
+					/* #ifdef H5 */
+					height: 30px;
+					/* #endif */
+					/* #ifndef H5 */
 					height: 50rpx;
+					/* #endif */
 					font-size: 14px;
 					font-weight: 1000;
 					margin-top: 30rpx;
@@ -464,7 +498,12 @@
 
 			.ganwei-info-didian {
 				width: 100%;
+				/* #ifdef H5 */
+				height: 290px;
+				/* #endif */
+				/* #ifndef H5 */
 				height: 350rpx;
+				/* #endif */
 				font-size: 14px;
 				margin-top: 30rpx;
 				padding-left: 20rpx;
@@ -472,7 +511,12 @@
 
 				.ganwei-info-tittle {
 					width: 100%;
+					/* #ifdef H5 */
+					height: 50px;
+					/* #endif */
+					/* #ifndef H5 */
 					height: 50rpx;
+					/* #endif */
 					font-size: 14px;
 					font-weight: 1000;
 					margin-top: 30rpx;
@@ -482,7 +526,12 @@
 
 			.ganwei-info-yaoqiu {
 				width: 100%;
+				/* #ifdef H5 */
+				height: 480px;
+				/* #endif */
+				/* #ifndef H5 */
 				height: 550rpx;
+				/* #endif */
 				font-size: 14px;
 				margin-top: 30rpx;
 				padding-left: 20rpx;
@@ -490,7 +539,12 @@
 
 				.ganwei-info-tittle {
 					width: 100%;
+					/* #ifdef H5 */
+					height: 50px;
+					/* #endif */
+					/* #ifndef H5 */
 					height: 50rpx;
+					/* #endif */
 					font-size: 14px;
 					font-weight: 1000;
 					margin-top: 30rpx;
@@ -500,15 +554,27 @@
 
 			.ganwei-info-qiye {
 				width: 100%;
-				height: 150rpx;
-				font-size: 14px;
+				/* #ifdef H5 */
+				height: 190px;
+				margin-top: 30px;
+				/* #endif */
+				/* #ifndef H5 */
+				height: 250rpx;
 				margin-top: 30rpx;
+				/* #endif */
+				font-size: 14px;
+				
 				padding-left: 20rpx;
 				float: left;
 
 				.ganwei-info-tittle {
 					width: 100%;
+					/* #ifdef H5 */
+					height: 30px;
+					/* #endif */
+					/* #ifndef H5 */
 					height: 50rpx;
+					/* #endif */
 					font-size: 14px;
 					font-weight: 1000;
 					margin-top: 30rpx;
