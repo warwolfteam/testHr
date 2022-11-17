@@ -207,6 +207,13 @@
 				</view>
 			</view>
 		</view>
+		<view class="task-botton">
+			<uni-goods-nav :options="taskOptions"
+				:fill="true"
+				:button-group="taskButtonGroup"
+				@click="onClickTask"
+				@buttonClick="taskButtonClick" />
+		</view>
 		<!-- 以下为弹出层 -->
 		<u-toast ref="fanYongToast" />
 	</view>
@@ -217,7 +224,22 @@
 		data() {
 			return {
 				item: homeData.teskDetaildata,
-				imageURL: 'https://me.heimaoba.cn/static/image/fanyongdetail.png'
+				imageURL: 'https://me.heimaoba.cn/static/image/fanyongdetail.png',
+				taskOptions: [{
+					icon: 'heart',
+					text: '收藏',
+					infoBackgroundColor: '#007aff',
+					infoColor: "#f5f5f5"
+				}],
+				taskButtonGroup: [{
+					text: '联系顾问',
+					backgroundColor: 'linear-gradient(90deg, #FFCD1E, #FF8A18)',
+					color: '#fff'
+				}, {
+					text: '立即接单',
+					backgroundColor: 'linear-gradient(90deg, #FE6035, #EF1224)',
+					color: '#fff'
+				}]
 			}
 		},
 		onLoad: function(option) {
@@ -236,6 +258,27 @@
 					title: '候选人过保后一次性返费',
 					type: "info"
 				})
+			},
+			onClickTask(e) {
+				uni.showToast({
+					title: `点击${e.content.text}`,
+					icon: 'none'
+				})
+			},
+			taskButtonClick(e) {
+				console.log(e);
+				uni.showToast({
+					title: `点击${e.content.text}`,
+					icon: 'none'
+				});
+				if (e.content.text == "立即接单") {
+					console.log("进入立即接单流程");
+				}
+				if (e.content.text == "联系顾问") {
+					console.log("进入联系顾问流程");
+				} else {
+					console.log("点击位置图标");
+				}
 			}
 		}
 	}
@@ -433,7 +476,7 @@
 			height: 1250px;
 			/* #endif */
 			/* #ifndef H5 */
-			height: 1800rpx;
+			height: 1600rpx;
 			/* #endif */
 			background-color: #fff;
 			border-radius: 15px;
@@ -563,7 +606,6 @@
 				margin-top: 30rpx;
 				/* #endif */
 				font-size: 14px;
-				
 				padding-left: 20rpx;
 				float: left;
 
@@ -581,6 +623,21 @@
 					padding-left: 20rpx;
 				}
 			}
+		}
+
+		.task-botton {
+			/* #ifndef APP-NVUE */
+			display: flex;
+			/* #endif */
+			flex-direction: column;
+			position: fixed;
+			left: 0;
+			right: 0;
+			/* #ifdef H5 */
+			left: var(--window-left);
+			right: var(--window-right);
+			/* #endif */
+			bottom: 0;
 		}
 	}
 </style>
