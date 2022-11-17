@@ -32,12 +32,6 @@
 					"titleNView": true
 				}
 			}
-		}, {
-			"path": "pages/taskDetail/taskDetail",
-			"style": {
-				"navigationBarTitleText": "任务详情",
-				"enablePullDownRefresh": false
-			}
 		}
 	],
 	"subPackages": [{
@@ -46,6 +40,14 @@
 			"path": "login",
 			"style": {
 				"navigationBarTitleText": "授权登录"
+			}
+		}]
+	}, {
+		"root": "pages/taskDetail",
+		"pages": [{
+			"path": "taskDetail",
+			"style": {
+				"navigationBarTitleText": "任务详情"
 			}
 		}]
 	}],
