@@ -92,7 +92,7 @@
 		data() {
 			return {
 				item: homeData.teskDetaildata,
-				imageURL: '/static/fanyongdetail.png'
+				imageURL: 'https://me.heimaoba.cn/static/image/fanyongdetail.png'
 			}
 		},
 		onLoad: function(option) {
