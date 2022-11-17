@@ -73,18 +73,18 @@
 		"backgroundColor": "#F8F8F8",
 		"list": [{
 			"pagePath": "pages/tabBar/home/home",
-			"iconPath": "static/home.png",
-			"selectedIconPath": "static/home-filling.png",
+			"iconPath": "static/icon/home.png",
+			"selectedIconPath": "static/icon/home-filling.png",
 			"text": "首页"
 		}, {
 			"pagePath": "pages/tabBar/order/order",
-			"iconPath": "static/order.png",
-			"selectedIconPath": "static/order_fill.png",
+			"iconPath": "static/icon/order.png",
+			"selectedIconPath": "static/icon/order_fill.png",
 			"text": "订单"
 		}, {
 			"pagePath": "pages/tabBar/my/my",
-			"iconPath": "static/user.png",
-			"selectedIconPath": "static/user-filling.png",
+			"iconPath": "static/icon/user.png",
+			"selectedIconPath": "static/icon/user-filling.png",
 			"text": "我的"
 		}]
 	}
