@@ -49,6 +49,11 @@
 			"style": {
 				"navigationBarTitleText": "任务详情"
 			}
+		}, {
+			"path": "lianxikefu",
+			"style": {
+				"navigationBarTitleText": "联系顾问"
+			}
 		}]
 	}],
 	"globalStyle": {
