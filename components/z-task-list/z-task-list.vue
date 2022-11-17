@@ -4,7 +4,13 @@
 			v-for="(item, index)  in dataList"
 			:key="index">
 			<view class="task-head">
-				<view class="task-tittle">{{ item.name }}</view>
+				<view class="task-tittle">{{ item.name }}
+					<u-icon class="sIcon"
+						@click="canceSearch"
+						name="arrow-right"
+						color="#000000"
+						size="30"></u-icon>
+				</view>
 				<view class="task-jindu">
 					<view class="task-jinxing">进行中</view>
 					<!-- <view class="task-jieshu">已结束</view> -->
