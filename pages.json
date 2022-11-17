@@ -39,7 +39,10 @@
 		"pages": [{
 			"path": "login",
 			"style": {
-				"navigationBarTitleText": "授权登录"
+				"navigationBarTitleText": "授权登录",
+				"app-plus": {
+					"titleNView": true
+				}
 			}
 		}]
 	}, {
@@ -47,12 +50,18 @@
 		"pages": [{
 			"path": "taskDetail",
 			"style": {
-				"navigationBarTitleText": "任务详情"
+				"navigationBarTitleText": "任务详情",
+				"app-plus": {
+					"titleNView": true
+				}
 			}
 		}, {
 			"path": "lianxikefu",
 			"style": {
-				"navigationBarTitleText": "联系顾问"
+				"navigationBarTitleText": "联系顾问",
+				"app-plus": {
+					"titleNView": true
+				}
 			}
 		}]
 	}],
