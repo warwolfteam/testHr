@@ -57,29 +57,154 @@
 		<view class="ganwei">
 			<view class="ganwei-tittle">岗位详情</view>
 			<view class="ganwei-zhiwei">客服</view>
-			<view class="ganwei-xinzifuli">薪资福利</view>
-			<view class="wrap">
-				<u-row gutter="16">
-					<u-col span="6">
-						<view class="demo-layout bg-purple"></view>
-					</u-col>
-					<u-col span="6">
-						<view class="demo-layout bg-purple-light"></view>
-					</u-col>
-				</u-row>
-				<u-row gutter="16">
-					<u-col span="6">
-						<view class="demo-layout bg-purple"></view>
-					</u-col>
-					<u-col span="6">
-						<view class="demo-layout bg-purple-light"></view>
-					</u-col>
-				</u-row>
-				<u-row gutter="16">
-					<u-col span="6">
-						<view class="demo-layout bg-purple"></view>
-					</u-col>
-				</u-row>
+			<view class="ganwei-info-fuli">
+				<span class="ganwei-info-tittle">薪资福利</span>
+				<view class="wrap">
+					<u-row gutter="16">
+						<u-col span="6">
+							<view class="col-layout-tittle">薪酬 </view>
+						</u-col>
+						<u-col span="6">
+							<view class="col-layout-tittle">薪酬结构</view>
+						</u-col>
+					</u-row>
+					<u-row gutter="16">
+						<u-col span="6">
+							<view class="col-layout-info">5000-10000元/月</view>
+						</u-col>
+						<u-col span="6">
+							<view class="col-layout-info">底薪,绩效,提成,加班费</view>
+						</u-col>
+					</u-row>
+					<u-row gutter="16">
+						<u-col span="6">
+							<view class="col-layout-tittle">发薪周期</view>
+						</u-col>
+					</u-row>
+					<u-row gutter="16">
+						<u-col span="6">
+							<view class="col-layout-info">月</view>
+						</u-col>
+					</u-row>
+				</view>
+			</view>
+			<view class="ganwei-info-didian">
+				<span class="ganwei-info-tittle">工作时间地点</span>
+				<view class="wrap">
+					<u-row gutter="16">
+						<u-col span="6">
+							<view class="col-layout-tittle">工作时间</view>
+						</u-col>
+					</u-row>
+					<u-row gutter="16">
+						<u-col span="6">
+							<view class="col-layout-info">早九晚六</view>
+						</u-col>
+					</u-row>
+					<u-row gutter="16">
+						<u-col span="6">
+							<view class="col-layout-tittle">出勤制度</view>
+						</u-col>
+					</u-row>
+					<u-row gutter="16">
+						<u-col span="10">
+							<view class="col-layout-info">周末双休</view>
+						</u-col>
+					</u-row>
+					<u-row gutter="16">
+						<u-col span="6">
+							<view class="col-layout-tittle">工作地点</view>
+						</u-col>
+					</u-row>
+					<u-row gutter="16">
+						<u-col span="10">
+							<view class="col-layout-info">全国</view>
+						</u-col>
+					</u-row>
+				</view>
+			</view>
+			<view class="ganwei-info-yaoqiu">
+				<span class="ganwei-info-tittle">岗位要求</span>
+				<view class="wrap">
+					<u-row gutter="16">
+						<u-col span="6">
+							<view class="col-layout-tittle">年龄</view>
+						</u-col>
+						<u-col span="6">
+							<view class="col-layout-tittle">性别</view>
+						</u-col>
+					</u-row>
+					<u-row gutter="16">
+						<u-col span="6">
+							<view class="col-layout-info">不限</view>
+						</u-col>
+						<u-col span="6">
+							<view class="col-layout-info">不限</view>
+						</u-col>
+					</u-row>
+					<u-row gutter="16">
+						<u-col span="6">
+							<view class="col-layout-tittle">学历</view>
+						</u-col>
+						<u-col span="6">
+							<view class="col-layout-tittle">工作经验</view>
+						</u-col>
+					</u-row>
+					<u-row gutter="16">
+						<u-col span="6">
+							<view class="col-layout-info">不限</view>
+						</u-col>
+						<u-col span="6">
+							<view class="col-layout-info">不限</view>
+						</u-col>
+					</u-row>
+					<u-row gutter="16">
+						<u-col span="6">
+							<view class="col-layout-tittle">专业要求</view>
+						</u-col>
+					</u-row>
+					<u-row gutter="16">
+						<u-col span="10">
+							<view class="col-layout-info">不限</view>
+						</u-col>
+					</u-row>
+					<u-row gutter="16">
+						<u-col span="6">
+							<view class="col-layout-tittle">技能要求</view>
+						</u-col>
+					</u-row>
+					<u-row gutter="16">
+						<u-col span="10">
+							<view class="col-layout-info">不限</view>
+						</u-col>
+					</u-row>
+					<u-row gutter="16">
+						<u-col span="6">
+							<view class="col-layout-tittle">岗位职责</view>
+						</u-col>
+					</u-row>
+					<u-row gutter="16">
+						<u-col span="10">
+							<view class="col-layout-info">负责早教产的电话销售工作</view>
+						</u-col>
+					</u-row>
+				</view>
+			</view>
+			<view class="ganwei-info-qiye">
+				<span class="ganwei-info-tittle">用工企业</span>
+				<view class="wrap">
+					<u-row gutter="16">
+						<u-col span="1">
+							<view class="col-layout-info">
+								<u-icon size="30"
+									name="home"></u-icon>
+							</view>
+						</u-col>
+						<u-col span="8">
+							<view class="col-layout-info">倍乐生商贸（中国）有限公司</view>
+						</u-col>
+					</u-row>
+				</view>
 			</view>
 		</view>
 		<!-- 以下为弹出层 -->
@@ -133,9 +258,16 @@
 		margin-right: 10rpx;
 	}
 
-	.demo-layout {
-		height: 80rpx;
+	.col-layout-tittle {
+		height: 40rpx;
 		border-radius: 8rpx;
+		color: #9aa1a8;
+	}
+
+	.col-layout-info {
+		height: 60rpx;
+		border-radius: 8rpx;
+		color: #000000;
 	}
 
 	.bg-purple {
@@ -288,7 +420,7 @@
 			margin-left: 20rpx;
 			margin-right: 20rpx;
 			margin-top: 30rpx;
-			height: 1360rpx;
+			height: 1800rpx;
 			background-color: #fff;
 			border-radius: 15px;
 
@@ -312,13 +444,76 @@
 				float: left;
 			}
 
-			.ganwei-xinzifuli {
+			.ganwei-info-fuli {
 				width: 100%;
-				height: 50rpx;
+				height: 280rpx;
 				font-size: 14px;
 				margin-top: 30rpx;
 				padding-left: 20rpx;
 				float: left;
+
+				.ganwei-info-tittle {
+					width: 100%;
+					height: 50rpx;
+					font-size: 14px;
+					font-weight: 1000;
+					margin-top: 30rpx;
+					padding-left: 20rpx;
+				}
+			}
+
+			.ganwei-info-didian {
+				width: 100%;
+				height: 350rpx;
+				font-size: 14px;
+				margin-top: 30rpx;
+				padding-left: 20rpx;
+				float: left;
+
+				.ganwei-info-tittle {
+					width: 100%;
+					height: 50rpx;
+					font-size: 14px;
+					font-weight: 1000;
+					margin-top: 30rpx;
+					padding-left: 20rpx;
+				}
+			}
+
+			.ganwei-info-yaoqiu {
+				width: 100%;
+				height: 550rpx;
+				font-size: 14px;
+				margin-top: 30rpx;
+				padding-left: 20rpx;
+				float: left;
+
+				.ganwei-info-tittle {
+					width: 100%;
+					height: 50rpx;
+					font-size: 14px;
+					font-weight: 1000;
+					margin-top: 30rpx;
+					padding-left: 20rpx;
+				}
+			}
+
+			.ganwei-info-qiye {
+				width: 100%;
+				height: 150rpx;
+				font-size: 14px;
+				margin-top: 30rpx;
+				padding-left: 20rpx;
+				float: left;
+
+				.ganwei-info-tittle {
+					width: 100%;
+					height: 50rpx;
+					font-size: 14px;
+					font-weight: 1000;
+					margin-top: 30rpx;
+					padding-left: 20rpx;
+				}
 			}
 		}
 	}
