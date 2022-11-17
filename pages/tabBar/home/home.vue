@@ -38,6 +38,13 @@
 		<view class="zhiwei-body">
 			<z-zhiwei-list :dataList="zZhiweiData"></z-zhiwei-list>
 		</view>
+		<view class="home-bottom">
+			<u-divider color="#868686"
+				height="20rpx"
+				half-width="200"
+				bg-color="#cccccc47"
+				border-color="#6d6d6d">已经到底了</u-divider>
+		</view>
 		<!-- 以下为弹出层 -->
 		<u-popup v-model="showSearch"
 			mode="center"
@@ -363,6 +370,10 @@
 			.s-shaiXuan-button {
 				margin-top: 200rpx;
 			}
+		}
+
+		.home-bottom {
+			background-color: #fff;
 		}
 	}
 </style>
