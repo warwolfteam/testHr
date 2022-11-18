@@ -72,6 +72,7 @@
 							:border-top="false"
 							title="我的收藏"></u-cell-item>
 						<u-cell-item icon="bookmark"
+							@click="tohelp"
 							:border-bottom="true"
 							:border-top="false"
 							title="帮助中心"></u-cell-item>
@@ -88,7 +89,7 @@
 							:border-top="false"
 							title="关于平台"></u-cell-item>
 						<u-cell-item icon="setting-fill"
-						@click="tosetting"
+							@click="tosetting"
 							:border-bottom="false"
 							:border-top="false"
 							title="设置"></u-cell-item>
@@ -139,6 +140,12 @@
 				console.log("点击设置");
 				uni.navigateTo({
 					url: "/pages/setting/setting"
+				})
+			},
+			tohelp() {
+				console.log("点击帮助中心");
+				uni.navigateTo({
+					url: "/pages/help/help"
 				})
 			}
 		}

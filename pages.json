@@ -108,6 +108,25 @@
 				}
 			}
 		}]
+	}, {
+		"root": "pages/help",
+		"pages": [{
+			"path": "help",
+			"style": {
+				"navigationBarTitleText": "帮助中心",
+				"app-plus": {
+					"titleNView": true
+				}
+			}
+		}, {
+			"path": "helpdetail",
+			"style": {
+				"navigationBarTitleText": "帮助中心",
+				"app-plus": {
+					"titleNView": true
+				}
+			}
+		}]
 	}],
 	"globalStyle": {
 		"pageOrientation": "portrait",
