@@ -67,6 +67,7 @@
 				<view class="my-list-kuai">
 					<u-cell-group :border="false">
 						<u-cell-item icon="star"
+							@click="toshoucang"
 							:border-bottom="true"
 							:border-top="false"
 							title="我的收藏"></u-cell-item>
@@ -75,6 +76,7 @@
 							:border-top="false"
 							title="帮助中心"></u-cell-item>
 						<u-cell-item icon="kefu-ermai"
+							@click="callkefu"
 							title="联系客服"
 							value="工作日09:00-18:00"
 							:border-bottom="true"
@@ -111,6 +113,18 @@
 				console.log("点击结算管理");
 				uni.navigateTo({
 					url: "/pages/jiesuan/jiesuan"
+				})
+			},
+			callkefu() {
+				console.log("点击联系客服");
+				uni.makePhoneCall({
+					phoneNumber: '021-1234567' //仅为示例
+				});
+			},
+			toshoucang() {
+				console.log("点击我的收藏");
+				uni.navigateTo({
+					url: "/pages/shoucang/shoucang"
 				})
 			}
 		}
