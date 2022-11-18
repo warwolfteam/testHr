@@ -7,19 +7,10 @@
 				:is-scroll="false"
 				@change="changeTabs"></u-tabs>
 		</view>
-		<view class="zanwu">
-			<u-image :src="noOrderDataImageURL"
-				width="50%"
-				height="50%"></u-image>
-			<span class="zanwu-zi">暂无更多</span>
+		<view class="kong">
+			<u-empty text="暂无更多"
+				:src="noOrderDataImageURL"></u-empty>
 		</view>
-		<!-- 		<view class="order-bottom">
-			<u-divider color="#868686"
-				height="20rpx"
-				half-width="200"
-				bg-color="#cccccc47"
-				border-color="#6d6d6d">已经到底了</u-divider>
-		</view> -->
 	</view>
 </template>
 <script>
@@ -54,29 +45,15 @@
 	.container {
 		background-color: #f5f5f5;
 		width: 100%;
-		height: 100%;
+		height: 100vh;
 
 		.tabs {
 			margin-bottom: 20px;
 		}
 
-		.zanwu {
+		.kong {
 			width: 100%;
-			height: 700rpx;
-			margin: 180rpx;
-			background-color: #f5f5f5;
-			text-align: left;
-
-			.zanwu-zi {
-				width: 60%;
-				color: #787878;
-				margin-left: 130rpx;
-				padding-top: 300rpx;
-			}
-		}
-
-		.order-bottom {
-			background-color: #f5f5f5;
+			margin-top: 300rpx;
 		}
 	}
 </style>

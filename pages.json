@@ -86,6 +86,17 @@
 				}
 			}
 		}]
+	}, {
+		"root": "pages/about",
+		"pages": [{
+			"path": "about",
+			"style": {
+				"navigationBarTitleText": "关于平台",
+				"app-plus": {
+					"titleNView": true
+				}
+			}
+		}]
 	}],
 	"globalStyle": {
 		"pageOrientation": "portrait",

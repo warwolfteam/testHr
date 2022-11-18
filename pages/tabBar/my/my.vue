@@ -83,6 +83,7 @@
 							:border-top="false">
 						</u-cell-item>
 						<u-cell-item icon="error-circle"
+							@click="toabout"
 							:border-bottom="true"
 							:border-top="false"
 							title="关于平台"></u-cell-item>
@@ -125,6 +126,12 @@
 				console.log("点击我的收藏");
 				uni.navigateTo({
 					url: "/pages/shoucang/shoucang"
+				})
+			},
+			toabout() {
+				console.log("点击关于平台");
+				uni.navigateTo({
+					url: "/pages/about/about"
 				})
 			}
 		}
