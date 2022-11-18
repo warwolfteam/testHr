@@ -37,11 +37,11 @@
 						<span class="fanyong-tittle-zi">我的佣金</span>
 					</view>
 					<view class="fanyong-botton">
-						<u-button type="warning"
+						<u-button @click="onjiesuan"
+							type="warning"
 							size="mini"
 							:plain="true">
-							<u-icon @click="onjiesuan"
-								name="order"
+							<u-icon name="order"
 								color="#ee9f00"
 								size="25"></u-icon>结算管理
 						</u-button>
