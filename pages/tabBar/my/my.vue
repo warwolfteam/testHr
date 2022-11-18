@@ -27,6 +27,71 @@
 					</view>
 				</view>
 			</view>
+			<!-- 任务返佣信息 -->
+			<view class="my-yongjing">
+				<view class="fanyong-head">
+					<view class="fanyong-tittle">
+						<u-icon @click="onFanYongTip()"
+							name="question-circle"
+							color="#000000"
+							size="40"></u-icon>
+						<span class="fanyong-tittle-zi">我的佣金</span>
+					</view>
+					<view class="fanyong-botton">
+						<u-button type="warning"
+							size="mini"
+							:plain="true">
+							<u-icon @click="onFanYongTip()"
+								name="order"
+								color="#ee9f00"
+								size="25"></u-icon>结算管理
+						</u-button>
+					</view>
+				</view>
+				<view class="fanyong-xinxi"
+					:style="{backgroundImage:                             
+				        'url('+yjImageURL+')'}">
+					<view class="my-yongjing-line">
+						<u-line color="#9e9e9e" />
+					</view>
+					<view class="fanyong-jiesuan">
+						<view class="fanyong-xinxi-tittle"> 已结算 </view>
+						<view class="fanyong-xinxi-money"> ￥0.00 </view>
+					</view>
+					<view class="fanyong-jiesuan">
+						<view class="fanyong-xinxi-tittle"> 结算中 </view>
+						<view class="fanyong-xinxi-money"> ￥0.00 </view>
+					</view>
+				</view>
+			</view>
+			<view class="my-list">
+				<view class="my-list-kuai">
+					<u-cell-group :border="false">
+						<u-cell-item icon="star"
+							:border-bottom="true"
+							:border-top="false"
+							title="我的收藏"></u-cell-item>
+						<u-cell-item icon="bookmark"
+							:border-bottom="true"
+							:border-top="false"
+							title="帮助中心"></u-cell-item>
+						<u-cell-item icon="kefu-ermai"
+							title="联系客服"
+							value="工作日09:00-18:00"
+							:border-bottom="true"
+							:border-top="false">
+						</u-cell-item>
+						<u-cell-item icon="error-circle"
+							:border-bottom="true"
+							:border-top="false"
+							title="关于平台"></u-cell-item>
+						<u-cell-item icon="setting-fill"
+							:border-bottom="false"
+							:border-top="false"
+							title="设置"></u-cell-item>
+					</u-cell-group>
+				</view>
+			</view>
 		</view>
 	</view>
 </template>
@@ -36,6 +101,7 @@
 			return {
 				bgImageURL: 'https://me.heimaoba.cn/static/image/mybg.png',
 				headImageURL: 'https://me.heimaoba.cn/static/image/defaultCompany.png',
+				yjImageURL: 'https://me.heimaoba.cn/static/image/myCommission.png',
 			}
 		},
 		methods: {
@@ -115,6 +181,91 @@
 					margin-top: 25rpx;
 					margin-left: 25rpx;
 				}
+			}
+		}
+
+		.my-yongjing {
+			margin-bottom: 20rpx;
+			margin-left: 20rpx;
+			margin-right: 20rpx;
+			margin-top: 30rpx;
+			height: 360rpx;
+			background-color: #fff;
+			border-radius: 15px;
+
+			.fanyong-head {
+				width: 100%;
+
+				.fanyong-tittle {
+					height: 50rpx;
+					font-size: 25px;
+					font-weight: 100;
+					margin-top: 30rpx;
+					padding-left: 20rpx;
+					float: left;
+				}
+
+				.fanyong-botton {
+					float: right;
+					height: 50rpx;
+					margin-top: 30rpx;
+					padding-right: 20rpx;
+
+					.fanyong-botton-zi {
+						margin-left: 20rpx;
+					}
+				}
+			}
+
+			.fanyong-xinxi {
+				float: left;
+				height: 300rpx;
+				width: 100%;
+				padding-top: 10rpx;
+
+				.my-yongjing-line {
+					padding: 20rpx;
+				}
+
+				.fanyong-jiesuan {
+					float: left;
+					height: 100rpx;
+					width: 100%;
+					padding-top: 10rpx;
+
+					.fanyong-xinxi-tittle {
+						margin-left: 50rpx;
+						font-weight: 10;
+						font-size: 28rpx;
+						color: #666666;
+						float: left;
+						width: 100%;
+					}
+
+					.fanyong-xinxi-money {
+						margin-top: 10rpx;
+						margin-left: 30rpx;
+						font-weight: 1000;
+						font-size: 38rpx;
+						color: #000000;
+						float: left;
+						width: 100%;
+					}
+				}
+			}
+		}
+
+		.my-list {
+			margin-bottom: 120rpx;
+			margin-left: 20rpx;
+			margin-right: 20rpx;
+			margin-top: 20rpx;
+			height: 580rpx;
+			background-color: #fff;
+			border-radius: 15px;
+
+			.my-list-kuai {
+				padding-top: 30rpx;
 			}
 		}
 	}
