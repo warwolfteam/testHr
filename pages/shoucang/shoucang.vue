@@ -1,5 +1,5 @@
 <template>
-	<view>
+	<view class="container">
 		<view class="zhiwei-body">
 			<z-zhiwei-list :dataList="zZhiweiData"></z-zhiwei-list>
 		</view>
@@ -26,7 +26,8 @@
 		background-color: #cccccc47;
 
 		.zhiwei-body {
-			
+			padding: 10rpx;
+			background-color: #cccccc47;
 		}
 	}
 </style>
