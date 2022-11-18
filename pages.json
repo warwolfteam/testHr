@@ -109,6 +109,17 @@
 			}
 		}]
 	}, {
+		"root": "pages/myinfo",
+		"pages": [{
+			"path": "myinfo",
+			"style": {
+				"navigationBarTitleText": "我的信息",
+				"app-plus": {
+					"titleNView": true
+				}
+			}
+		}]
+	}, {
 		"root": "pages/help",
 		"pages": [{
 			"path": "help",
