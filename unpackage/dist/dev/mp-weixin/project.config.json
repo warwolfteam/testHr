@@ -6,9 +6,9 @@
   },
   "setting": {
     "urlCheck": false,
-    "es6": true,
-    "postcss": false,
-    "minified": false,
+    "es6": false,
+    "postcss": true,
+    "minified": true,
     "newFeature": true,
     "bigPackageSizeSupport": true,
     "babelSetting": {

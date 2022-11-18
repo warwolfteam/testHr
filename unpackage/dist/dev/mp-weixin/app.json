@@ -10,6 +10,44 @@
       "pages": [
         "login"
       ]
+    },
+    {
+      "root": "pages/taskDetail",
+      "pages": [
+        "taskDetail",
+        "lianxikefu"
+      ]
+    },
+    {
+      "root": "pages/jiesuan",
+      "pages": [
+        "jiesuan"
+      ]
+    },
+    {
+      "root": "pages/shoucang",
+      "pages": [
+        "shoucang"
+      ]
+    },
+    {
+      "root": "pages/about",
+      "pages": [
+        "about"
+      ]
+    },
+    {
+      "root": "pages/setting",
+      "pages": [
+        "setting"
+      ]
+    },
+    {
+      "root": "pages/help",
+      "pages": [
+        "help",
+        "helpdetail"
+      ]
     }
   ],
   "window": {
@@ -17,7 +55,7 @@
     "navigationBarTitleText": "TestHr",
     "navigationBarTextStyle": "white",
     "navigationBarBackgroundColor": "#ffaa00",
-    "backgroundColor": "#F8F8F8",
+    "backgroundColor": "#cccccc",
     "backgroundColorTop": "#F4F5F6",
     "backgroundColorBottom": "#F4F5F6"
   },
@@ -29,20 +67,20 @@
     "list": [
       {
         "pagePath": "pages/tabBar/home/home",
-        "iconPath": "static/home.png",
-        "selectedIconPath": "static/home-filling.png",
+        "iconPath": "static/icons/home.png",
+        "selectedIconPath": "static/icons/home-filling.png",
         "text": "首页"
       },
       {
         "pagePath": "pages/tabBar/order/order",
-        "iconPath": "static/order.png",
-        "selectedIconPath": "static/order_fill.png",
+        "iconPath": "static/icons/order.png",
+        "selectedIconPath": "static/icons/order_fill.png",
         "text": "订单"
       },
       {
         "pagePath": "pages/tabBar/my/my",
-        "iconPath": "static/user.png",
-        "selectedIconPath": "static/user-filling.png",
+        "iconPath": "static/icons/user.png",
+        "selectedIconPath": "static/icons/user-filling.png",
         "text": "我的"
       }
     ]

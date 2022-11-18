@@ -1,4 +1,9 @@
 {
   "navigationBarTitleText": "订单",
-  "usingComponents": {}
+  "usingComponents": {
+    "u-search": "/uview-ui/components/u-search/u-search",
+    "u-tabs": "/uview-ui/components/u-tabs/u-tabs",
+    "z-task-list": "/components/z-task-list/z-task-list",
+    "u-divider": "/uview-ui/components/u-divider/u-divider"
+  }
 }
