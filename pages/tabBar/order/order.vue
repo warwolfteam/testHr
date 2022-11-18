@@ -3,14 +3,13 @@
 		<view class="home-search-area">
 			<u-search placeholder="搜索任务名称"
 				margin="40rpx"
-				:show-action="fasle"
+				:show-action="false"
 				v-model="keyword">
 			</u-search>
 		</view>
 		<view class="tabs">
 			<u-tabs :list="tabsList"
 				active-color="#ffaa00"
-				:is-scroll="false"
 				:current="tabsCurrent"
 				@change="changeTabs"></u-tabs>
 		</view>
@@ -35,6 +34,7 @@
 		},
 		data() {
 			return {
+				keyword: "",
 				tabsList: [{
 					name: '进行中'
 				}, {
