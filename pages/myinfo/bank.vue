@@ -1,9 +1,34 @@
 <template>
 	<view class="container">
+		<view class="tittle"> aaaa </view>
 		<view class="bg">
 			<view class="myinfo">
 				<view class="myinfo-cell">
 					<u-cell-group :border="false">
+						<u-cell-item title="解除与认证主体绑定"
+							label="如您已不负责此团队的招聘业务,可解除绑定"
+							:border-top="false"
+							:border-bottom="false"
+							:arrow="true"
+							@click="toEditInfo"></u-cell-item>
+						<u-cell-item title="解除与认证主体绑定"
+							label="如您已不负责此团队的招聘业务,可解除绑定"
+							:border-top="false"
+							:border-bottom="false"
+							:arrow="true"
+							@click="toEditInfo"></u-cell-item>
+						<u-cell-item title="解除与认证主体绑定"
+							label="如您已不负责此团队的招聘业务,可解除绑定"
+							:border-top="false"
+							:border-bottom="false"
+							:arrow="true"
+							@click="toEditInfo"></u-cell-item>
+						<u-cell-item title="解除与认证主体绑定"
+							label="如您已不负责此团队的招聘业务,可解除绑定"
+							:border-top="false"
+							:border-bottom="false"
+							:arrow="true"
+							@click="toEditInfo"></u-cell-item>
 						<u-cell-item title="解除与认证主体绑定"
 							label="如您已不负责此团队的招聘业务,可解除绑定"
 							:border-top="false"
@@ -43,6 +68,16 @@
 		background-color: #a2a2a247;
 		width: 100%;
 		height: 100vh;
+
+		.tittle {
+			text-align: center;
+			height: 80rpx;
+			width: 100%;
+			background-color: #ffff7f;
+			color: #ffaa00;
+			font-size: 38rpx;
+			line-height: 80rpx;
+		}
 
 		.bg {
 			// background-color: #e7e7e7;

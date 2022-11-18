@@ -118,6 +118,22 @@
 					"titleNView": true
 				}
 			}
+		}, {
+			"path": "info",
+			"style": {
+				"navigationBarTitleText": "认证设置",
+				"app-plus": {
+					"titleNView": true
+				}
+			}
+		}, {
+			"path": "bank",
+			"style": {
+				"navigationBarTitleText": "完善收款账户",
+				"app-plus": {
+					"titleNView": true
+				}
+			}
 		}]
 	}, {
 		"root": "pages/help",

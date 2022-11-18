@@ -9,7 +9,8 @@
 							label="91360781MA37Q8Q32U"
 							:border-top="false"
 							:border-bottom="true"
-							:arrow="true"></u-cell-item>
+							:arrow="true"
+							@click="toEditInfo"></u-cell-item>
 						<u-cell-item title="联系地址"
 							label="未填写"
 							:border-top="false"
@@ -53,7 +54,8 @@
 							label="6400 01** ***0 015"
 							:border-top="false"
 							:border-bottom="false"
-							:arrow="true"></u-cell-item>
+							:arrow="true"
+							@click="toEditBank"></u-cell-item>
 					</u-cell-group>
 				</view>
 			</view>
@@ -67,7 +69,20 @@
 		data() {
 			return {}
 		},
-		methods: {}
+		methods: {
+			toEditBank() {
+				console.log("点击收款账户");
+				uni.navigateTo({
+					url: "/pages/myinfo/bank"
+				})
+			},
+			toEditInfo() {
+				console.log("点击基本信息");
+				uni.navigateTo({
+					url: "/pages/myinfo/info"
+				})
+			}
+		}
 	}
 </script>
 <style lang="scss"
