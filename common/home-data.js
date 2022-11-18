@@ -3432,5 +3432,60 @@ export default {
 			type: "success",
 			mode: "light"
 		}]
+	},
+	helpList: {
+		"releaseTime": "2022-11-19",
+		helpList1: [{
+			id: 0,
+			text: "PC端数据和小程序数据会同步吗?",
+		}, {
+			id: 1,
+			text: "哪些账号会被违规处理？",
+		}, {
+			id: 2,
+			text: "如何添加同事协同办公?",
+		}, {
+			id: 3,
+			text: "一个人可以注册/认证两个账号并同时接单吗?",
+		}, ],
+		helpList2: [{
+			id: 0,
+			text: "PC?",
+		}, {
+			id: 1,
+			text: "哪些账号？",
+		}, {
+			id: 2,
+			text: "协同办公?",
+		}, {
+			id: 3,
+			text: "一个人可以注册?",
+		}, ],
+		helpList3: [{
+			id: 0,
+			text: "会同步吗?",
+		}, {
+			id: 1,
+			text: "哪些处理？",
+		}, {
+			id: 2,
+			text: "如同办公?",
+		}, {
+			id: 3,
+			text: "一个人可号并同时接单吗?",
+		}, ],
+		helpList4: [{
+			id: 0,
+			text: "PC端会同步吗?",
+		}, {
+			id: 1,
+			text: "哪些？",
+		}, {
+			id: 2,
+			text: "如何办公?",
+		}, {
+			id: 3,
+			text: "一个人两个账号同时接单吗?",
+		}, ]
 	}
 }
