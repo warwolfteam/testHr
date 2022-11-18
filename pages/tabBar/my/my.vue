@@ -31,8 +31,7 @@
 			<view class="my-yongjing">
 				<view class="fanyong-head">
 					<view class="fanyong-tittle">
-						<u-icon @click="onFanYongTip()"
-							name="question-circle"
+						<u-icon name="question-circle"
 							color="#000000"
 							size="40"></u-icon>
 						<span class="fanyong-tittle-zi">我的佣金</span>
@@ -41,7 +40,7 @@
 						<u-button type="warning"
 							size="mini"
 							:plain="true">
-							<u-icon @click="onFanYongTip()"
+							<u-icon @click="onjiesuan"
 								name="order"
 								color="#ee9f00"
 								size="25"></u-icon>结算管理
@@ -107,6 +106,12 @@
 		methods: {
 			onInfo() {
 				console.log("点击箭头");
+			},
+			onjiesuan() {
+				console.log("点击结算管理");
+				uni.navigateTo({
+					url: "/pages/jiesuan/jiesuan"
+				})
 			}
 		}
 	}

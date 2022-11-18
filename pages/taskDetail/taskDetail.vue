@@ -276,7 +276,7 @@
 				}
 				if (e.content.text == "联系顾问") {
 					console.log("进入联系顾问流程");
-					uni.redirectTo({
+					uni.navigateTo({
 						url: "/pages/taskDetail/lianxikefu?id=10" 
 					})
 				} else {

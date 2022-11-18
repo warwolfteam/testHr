@@ -5,7 +5,7 @@
 				@click="onCitySelect">{{currentCity}}</view>
 			<u-search placeholder="搜索岗位任务"
 				margin="15px"
-				:show-action="fasle"
+				:show-action="false"
 				:disabled="true"
 				@click="openShowSearch">
 			</u-search>
@@ -58,7 +58,7 @@
 					size="38"></u-icon>
 				<u-search placeholder="搜索任务名称/用工企业"
 					margin="20px"
-					:show-action="fasle"
+					:show-action="false"
 					v-model="keyword">
 				</u-search>
 			</view>

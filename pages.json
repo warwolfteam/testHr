@@ -64,6 +64,17 @@
 				}
 			}
 		}]
+	}, {
+		"root": "pages/jiesuan",
+		"pages": [{
+			"path": "jiesuan",
+			"style": {
+				"navigationBarTitleText": "结算",
+				"app-plus": {
+					"titleNView": true
+				}
+			}
+		}]
 	}],
 	"globalStyle": {
 		"pageOrientation": "portrait",

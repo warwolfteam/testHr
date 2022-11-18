@@ -82,7 +82,7 @@
 		methods: {
 			tokefu(item) {
 				console.log("点击事件触发toDetail--item：", item);
-				uni.redirectTo({
+				uni.navigateTo({
 					url: "/pages/taskDetail/lianxikefu?id=" + item.id
 				})
 			}
