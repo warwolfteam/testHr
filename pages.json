@@ -97,6 +97,17 @@
 				}
 			}
 		}]
+	}, {
+		"root": "pages/setting",
+		"pages": [{
+			"path": "setting",
+			"style": {
+				"navigationBarTitleText": "设置",
+				"app-plus": {
+					"titleNView": true
+				}
+			}
+		}]
 	}],
 	"globalStyle": {
 		"pageOrientation": "portrait",

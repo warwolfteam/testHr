@@ -88,6 +88,7 @@
 							:border-top="false"
 							title="关于平台"></u-cell-item>
 						<u-cell-item icon="setting-fill"
+						@click="tosetting"
 							:border-bottom="false"
 							:border-top="false"
 							title="设置"></u-cell-item>
@@ -132,6 +133,12 @@
 				console.log("点击关于平台");
 				uni.navigateTo({
 					url: "/pages/about/about"
+				})
+			},
+			tosetting() {
+				console.log("点击设置");
+				uni.navigateTo({
+					url: "/pages/setting/setting"
 				})
 			}
 		}
