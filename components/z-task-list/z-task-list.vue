@@ -108,13 +108,13 @@
 			toInHouXuanRen(item) {
 				console.log("点击事件触发已入职候选人：", item);
 				uni.navigateTo({
-					url: "/pages/candidateList/candidateList?selectStatus=1"
+					url: "/pages/candidateList/candidateList?selectStatus=3"
 				})
 			},
 			toOutHouXuanRen(item) {
 				console.log("点击事件触发已过保候选人：", item);
 				uni.navigateTo({
-					url: "/pages/candidateList/candidateList?selectStatus=2"
+					url: "/pages/candidateList/candidateList?selectStatus=4"
 				})
 			},
 		}

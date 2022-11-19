@@ -9,22 +9,43 @@
 			</u-dropdown>
 		</view>
 		<view class="bg">
-			<view class="candidate">
-				<view class="candidate-cell">
-					<view class="candidate-cell-name">
-						<span class="userName">张三</span>
-						<span class="sexIcon">
-							<i class="iconfont icon-nvxing"></i>
-						</span>
+			<!-- 候选人列表 -->
+			<view class="allList"
+				v-for="(item, index)  in dataList"
+				:key="index"
+				v-if="selectValue == 0&1">
+				<view class="candidate"
+					@click="toCandidateDetail(item)">
+					<view class="candidate-cell">
+						<view class="candidate-cell-name">
+							<span class="userName">{{item.label}}</span>
+							<span class="sexIcon">
+								<i class="iconfont icon-nvxing"></i>
+							</span>
+						</view>
+						<view class="candidate-cell-status"> 新添加 </view>
 					</view>
-					<view class="candidate-cell-status"> 新添加 </view>
-				</view>
-				<view class="candidate-miaosu">
-					<view class="candidate-miaosu-xinxi">
-						<span class="xinxi">男 | 31岁 | 大专</span>
+					<view class="candidate-miaosu">
+						<view class="candidate-miaosu-xinxi">
+							<span class="xinxi">男 | 31岁 | 大专</span>
+						</view>
+						<view class="candidate-miaosu-time"> 2天前 </view>
 					</view>
-					<view class="candidate-miaosu-time"> 2天前 </view>
 				</view>
+			</view>
+			<!-- 已经到底了 -->
+			<view class="order-bottom"
+				v-if="selectValue == 0&1">
+				<u-divider color="#868686"
+					height="20rpx"
+					half-width="200"
+					bg-color="#dedede47"
+					border-color="#6d6d6d">已经到底了</u-divider>
+			</view>
+			<view class="kong"
+				v-if="selectValue != 0&1">
+				<u-empty text="暂无候选人"
+					:src="noOrderDataImageURL"></u-empty>
 			</view>
 		</view>
 	</view>
@@ -36,7 +57,8 @@
 		data() {
 			return {
 				show: false,
-				selectValue: "0",
+				noOrderDataImageURL: 'https://me.heimaoba.cn/static/image/noOrderData.png',
+				selectValue: 0,
 				selectTitle: "新添加（1）",
 				selectOptions: [{
 					label: '全部招聘状态（1）',
@@ -57,7 +79,32 @@
 					label: '不合适',
 					value: 5,
 				}],
+				dataList: [{
+					label: '张三',
+					id: 0,
+				}, {
+					label: '李四',
+					id: 1,
+				}, {
+					label: '王五',
+					id: 2,
+				}, {
+					label: '赵六',
+					id: 3,
+				}, {
+					label: '周七',
+					id: 4,
+				}, {
+					label: '钱八',
+					id: 5,
+				}],
 			}
+		},
+		onLoad: function(option) {
+			console.log("option:", option);
+			console.log("option.selectStatus:", option.selectStatus);
+			this.selectValue = option.selectStatus
+			this.selectTitle = this.selectOptions[option.selectStatus].label
 		},
 		methods: {
 			toEditInfo() {
@@ -66,8 +113,15 @@
 			changeSelect(e) {
 				console.log("点击下拉", e);
 				console.log("点击下拉", this.selectOptions);
+				console.log("点击下拉", this.selectValue);
 				this.selectTitle = this.selectOptions[e].label
-			}
+			},
+			toCandidateDetail(item) {
+				console.log("点击候选人", item);
+				uni.navigateTo({
+					url: "/pages/candidateDetail/candidateDetail?id=" + item.id
+				})
+			},
 		}
 	}
 </script>
@@ -88,71 +142,83 @@
 			padding-top: 30rpx;
 			padding-bottom: 30rpx;
 
-			.candidate {
-				height: 180rpx;
-				background-color: #ffffff;
-				padding: 30rpx;
-				margin-bottom: 20rpx;
-				margin-left: 10rpx;
-				margin-right: 10rpx;
-				border-radius: 18rpx;
+			.allList {
+				.candidate {
+					height: 180rpx;
+					background-color: #ffffff;
+					padding: 30rpx;
+					margin-bottom: 20rpx;
+					margin-left: 10rpx;
+					margin-right: 10rpx;
+					border-radius: 18rpx;
 
-				.candidate-tittle {
-					margin-left: 30rpx;
-					font-size: 38rpx;
-					font-weight: 1000;
-				}
+					.candidate-tittle {
+						margin-left: 30rpx;
+						font-size: 38rpx;
+						font-weight: 1000;
+					}
 
-				.candidate-cell {
-					width: 100%;
-					height: 50rpx;
-					margin-top: 10rpx;
-					margin-bottom: 10rpx;
+					.candidate-cell {
+						width: 100%;
+						height: 50rpx;
+						margin-top: 10rpx;
+						margin-bottom: 10rpx;
 
-					.candidate-cell-name {
-						float: left;
-						display: flex;
+						.candidate-cell-name {
+							float: left;
+							display: flex;
 
-						.userName {
-							align-items: center;
-							margin-right: 20rpx;
+							.userName {
+								align-items: center;
+								margin-right: 20rpx;
+							}
+
+							.sexIcon {
+								align-items: center;
+								font-size: 18rpx;
+								color: #0055ff;
+							}
 						}
 
-						.sexIcon {
-							align-items: center;
-							font-size: 18rpx;
-							color: #0055ff;
+						.candidate-cell-status {
+							float: right;
 						}
 					}
 
-					.candidate-cell-status {
-						float: right;
-					}
-				}
+					.candidate-miaosu {
+						width: 100%;
+						height: 50rpx;
+						margin-top: 10rpx;
+						margin-bottom: 10rpx;
 
-				.candidate-miaosu {
-					width: 100%;
-					height: 50rpx;
-					margin-top: 10rpx;
-					margin-bottom: 10rpx;
+						.candidate-miaosu-xinxi {
+							float: left;
+							display: flex;
 
-					.candidate-miaosu-xinxi {
-						float: left;
-						display: flex;
+							.xinxi {
+								align-items: center;
+								font-size: 24rpx;
+								color: #717171;
+							}
+						}
 
-						.xinxi {
-							align-items: center;
+						.candidate-miaosu-time {
+							float: right;
 							font-size: 24rpx;
 							color: #717171;
 						}
 					}
-
-					.candidate-miaosu-time {
-						float: right;
-						font-size: 24rpx;
-						color: #717171;
-					}
 				}
+			}
+
+			.candidate-bottom {
+				background-color: #fff;
+			}
+
+			.kong {
+				width: 100%;
+				height: 50vh;
+				// background-color: #dedede;
 			}
 		}
 	}
