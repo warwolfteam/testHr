@@ -16,7 +16,7 @@
 							:border-top="false"
 							:border-bottom="true"
 							:arrow="true"
-							@click="toEditInfo"></u-cell-item>
+							@click="selectBankName"></u-cell-item>
 						<u-cell-item title="开户行省市"
 							:value="bankCity"
 							:border-top="false"
@@ -26,8 +26,7 @@
 						<u-cell-item title="开户支行"
 							:border-top="false"
 							:border-bottom="true"
-							:arrow="false"
-							@click="toEditInfo">
+							:arrow="false">
 							<u-input slot="right-icon"
 								v-model="bankCityName"
 								input-align="right"
@@ -56,6 +55,10 @@
 			mode="single-column"
 			:list="accountNameList"
 			@confirm="confirmAccountName"></u-select>
+		<u-select v-model="showBankName"
+			mode="single-column"
+			:list="bankNameList"
+			@confirm="confirmBankName"></u-select>
 	</view>
 </template>
 <script>
@@ -72,9 +75,23 @@
 				bankCardNumber: "6400 01** ***0 015",
 				showBankCity: false,
 				showAccountName: false,
+				showBankName: false,
 				accountNameList: [{
 					value: '1',
 					label: '江西某某公司'
+				}],
+				bankNameList: [{
+					value: '1',
+					label: '台州银行'
+				}, {
+					value: '2',
+					label: '浙江银行'
+				}, {
+					value: '3',
+					label: '九江银行'
+				}, {
+					value: '4',
+					label: '赣州银行'
 				}],
 				bankCityList: [{
 					value: 1,
@@ -126,6 +143,10 @@
 				console.log("点击户名");
 				this.showAccountName = true;
 			},
+			selectBankName() {
+				console.log("点击银行名称");
+				this.showBankName = true;
+			},
 			confirmBankCity(e) {
 				console.log("点击开户行省市确定", e);
 				console.log(e[0].label + "-" + e[1].label + "-" + e[2].label);
@@ -135,6 +156,11 @@
 				console.log("点击户名确定", e);
 				console.log(e[0].label);
 				this.accountName = e[0].label;
+			},
+			confirmBankName(e) {
+				console.log("点击银行名称确定", e);
+				console.log(e[0].label);
+				this.bankName = e[0].label;
 			}
 		}
 	}
