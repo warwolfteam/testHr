@@ -13,7 +13,7 @@
 			<view class="allList"
 				v-for="(item, index)  in dataList"
 				:key="index"
-				v-if="selectValue == 0&1">
+				v-if="selectValue == 0||selectValue == 1">
 				<view class="candidate"
 					@click="toCandidateDetail(item)">
 					<view class="candidate-cell">
@@ -35,7 +35,7 @@
 			</view>
 			<!-- 已经到底了 -->
 			<view class="order-bottom"
-				v-if="selectValue == 0&1">
+				v-if="selectValue == 0 ||selectValue == 1">
 				<u-divider color="#868686"
 					height="20rpx"
 					half-width="200"
@@ -43,7 +43,7 @@
 					border-color="#6d6d6d">已经到底了</u-divider>
 			</view>
 			<view class="kong"
-				v-if="selectValue != 0&1">
+				v-if="selectValue != 0||selectValue != 1">
 				<u-empty text="暂无候选人"
 					:src="noOrderDataImageURL"></u-empty>
 			</view>
@@ -59,12 +59,12 @@
 				show: false,
 				noOrderDataImageURL: 'https://me.heimaoba.cn/static/image/noOrderData.png',
 				selectValue: 0,
-				selectTitle: "新添加（1）",
+				selectTitle: "全部招聘状态（6）",
 				selectOptions: [{
-					label: '全部招聘状态（1）',
+					label: '全部招聘状态（6）',
 					value: 0,
 				}, {
-					label: '新添加（1）',
+					label: '新添加（6）',
 					value: 1,
 				}, {
 					label: '已到面',

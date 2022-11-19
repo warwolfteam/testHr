@@ -25,7 +25,7 @@
 					<u-row gutter="16">
 						<u-col span="4">
 							<view class="col-layout-info"
-								@click="toAllHouXuanRen(item)">1</view>
+								@click="toAllHouXuanRen(item)">6</view>
 						</u-col>
 						<u-col span="4">
 							<view class="col-layout-info"
