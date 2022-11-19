@@ -3,7 +3,7 @@
 		<view class="taskList"
 			v-for="(item, index)  in dataList"
 			:key="index">
-			<view class="task-head">
+			<view class="task-head" @click="toOrderDetail(item)">
 				<view class="task-tittle">{{ item.name }}
 					<u-icon class="sIcon"
 						@click="canceSearch"
@@ -85,7 +85,13 @@
 				uni.navigateTo({
 					url: "/pages/taskDetail/lianxikefu?id=" + item.id
 				})
-			}
+			},
+			toOrderDetail(item) {
+				console.log("点击事件触发toDetail--item：", item);
+				uni.navigateTo({
+					url: "/pages/orderDetail/orderDetail?id=" + item.id
+				})
+			},
 		}
 	}
 </script>
