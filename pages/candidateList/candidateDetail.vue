@@ -27,7 +27,8 @@
 						<view class="candidate-mianshi-edit">
 							<u-icon name="edit-pen"
 								color="#00ff00"
-								size="28"></u-icon>
+								size="28"
+								@click="editMianShi"></u-icon>
 						</view>
 					</view>
 					<view class="candidate-jichuxinxi">
@@ -90,6 +91,34 @@
 				</view>
 			</view>
 		</view>
+		<u-popup v-model="show"
+			mode="bottom"
+			height="25%"
+			border-radius="14">
+			<view class="qiwang">
+				<view class="qiwang-input">
+					<u-input v-model="value"
+						type="textarea"
+						:border="true"
+						height="200"
+						:auto-height="true" />
+				</view>
+				<view class="qiwang-bottom">
+					<u-button size="mini"
+						type="warning"
+						@click="onMianShi">确定</u-button>
+				</view>
+			</view>
+			<!-- <u-field v-model="mobile"
+				:border-bottom="false"
+				placeholder="请填写期望面试时间"
+				type="textarea">
+				<u-button size="mini"
+					slot="right"
+					type="warning"
+					@click="onMianShi">确定</u-button>
+			</u-field> -->
+		</u-popup>
 		<view class="candidate-botton">
 			<u-button type="warning">编辑候选人信息</u-button>
 		</view>
@@ -134,6 +163,13 @@
 					phoneNumber: this.phone //仅为示例
 				});
 			},
+			editMianShi() {
+				console.log("点击修改图标");
+				this.show = true;
+			},
+			onMianShi() {
+				console.log("填写期望面试时间");
+			}
 		}
 	}
 </script>
@@ -343,6 +379,24 @@
 			padding-bottom: 10rpx;
 			padding-left: 30rpx;
 			padding-right: 30rpx;
+		}
+
+		.qiwang {
+			padding: 30rpx;
+			display: flex;
+
+			.qiwang-input {
+				width: 90%;
+				align-items: center;
+				
+			}
+
+			.qiwang-bottom {
+				
+				align-items: center;
+				margin-left: 30rpx;
+				padding-top: 14%;
+			}
 		}
 	}
 </style>
