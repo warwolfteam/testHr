@@ -91,7 +91,7 @@
 			</view>
 		</view>
 		<view class="candidate-botton">
-			<u-button type="error">退出登录</u-button>
+			<u-button type="warning">编辑候选人信息</u-button>
 		</view>
 	</view>
 </template>
