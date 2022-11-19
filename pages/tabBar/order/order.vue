@@ -13,15 +13,21 @@
 				:current="tabsCurrent"
 				@change="changeTabs"></u-tabs>
 		</view>
-		<view class="order-body">
+		<view class="order-body"
+			v-if="tabsCurrent==0">
 			<z-task-list :dataList="zZhiweiData"></z-task-list>
+			<view class="order-bottom">
+				<u-divider color="#868686"
+					height="20rpx"
+					half-width="200"
+					bg-color="#cccccc47"
+					border-color="#6d6d6d">已经到底了</u-divider>
+			</view>
 		</view>
-		<view class="order-bottom">
-			<u-divider color="#868686"
-				height="20rpx"
-				half-width="200"
-				bg-color="#cccccc47"
-				border-color="#6d6d6d">已经到底了</u-divider>
+		<view class="kong"
+			v-if="tabsCurrent==1">
+			<u-empty text="暂无已结束的订单"
+				:src="noOrderDataImageURL"></u-empty>
 		</view>
 	</view>
 </template>
@@ -42,6 +48,7 @@
 				}],
 				tabsCurrent: 0,
 				zZhiweiData: homeData.zZhiweiData.data.list,
+				noOrderDataImageURL: 'https://me.heimaoba.cn/static/image/noOrderData.png',
 			}
 		},
 		methods: {
@@ -57,7 +64,7 @@
 	.container {
 		background-color: #cccccc47;
 
-		// height: 200vh;
+		// height: 100%;
 		// margin-top: 150rpx;
 		.home-search-area {
 			padding: 5rpx;
@@ -66,14 +73,21 @@
 		}
 
 		.tabs {
-			margin-bottom: 20px;
+			padding-bottom: 20px;
+			background-color: #fff;
 		}
 
 		.order-body {
 			width: 100%;
+
+			.order-bottom {
+				background-color: #fff;
+			}
 		}
 
-		.order-bottom {
+		.kong {
+			width: 100%;
+			height: 50vh;
 			background-color: #fff;
 		}
 	}

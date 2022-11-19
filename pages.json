@@ -109,6 +109,17 @@
 			}
 		}]
 	}, {
+		"root": "pages/orderDetail",
+		"pages": [{
+			"path": "orderDetail",
+			"style": {
+				"navigationBarTitleText": "订单详情",
+				"app-plus": {
+					"titleNView": true
+				}
+			}
+		}]
+	}, {
 		"root": "pages/myinfo",
 		"pages": [{
 			"path": "myinfo",
