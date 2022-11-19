@@ -3,7 +3,8 @@
 		<view class="taskList"
 			v-for="(item, index)  in dataList"
 			:key="index">
-			<view class="task-head" @click="toOrderDetail(item)">
+			<view class="task-head"
+				@click="toOrderDetail(item)">
 				<view class="task-tittle">{{ item.name }}
 					<u-icon class="sIcon"
 						@click="canceSearch"
@@ -23,24 +24,30 @@
 				<view class="wrap">
 					<u-row gutter="16">
 						<u-col span="4">
-							<view class="col-layout-info">1</view>
+							<view class="col-layout-info"
+								@click="toAllHouXuanRen(item)">1</view>
 						</u-col>
 						<u-col span="4">
-							<view class="col-layout-info">0</view>
+							<view class="col-layout-info"
+								@click="toInHouXuanRen(item)">0</view>
 						</u-col>
 						<u-col span="4">
-							<view class="col-layout-info">0</view>
+							<view class="col-layout-info"
+								@click="toOutHouXuanRen(item)">0</view>
 						</u-col>
 					</u-row>
 					<u-row gutter="16">
 						<u-col span="4">
-							<view class="col-layout-tittle">全部候选人</view>
+							<view class="col-layout-tittle"
+								@click="toAllHouXuanRen(item)">全部候选人</view>
 						</u-col>
 						<u-col span="4">
-							<view class="col-layout-tittle">已入职</view>
+							<view class="col-layout-tittle"
+								@click="toInHouXuanRen(item)">已入职</view>
 						</u-col>
 						<u-col span="4">
-							<view class="col-layout-tittle">已过保</view>
+							<view class="col-layout-tittle"
+								@click="toOutHouXuanRen(item)">已过保</view>
 						</u-col>
 					</u-row>
 				</view>
@@ -90,6 +97,24 @@
 				console.log("点击事件触发toDetail--item：", item);
 				uni.navigateTo({
 					url: "/pages/orderDetail/orderDetail?id=" + item.id
+				})
+			},
+			toAllHouXuanRen(item) {
+				console.log("点击事件触发全部候选人：", item);
+				uni.navigateTo({
+					url: "/pages/candidateList/candidateList?selectStatus=0"
+				})
+			},
+			toInHouXuanRen(item) {
+				console.log("点击事件触发已入职候选人：", item);
+				uni.navigateTo({
+					url: "/pages/candidateList/candidateList?selectStatus=1"
+				})
+			},
+			toOutHouXuanRen(item) {
+				console.log("点击事件触发已过保候选人：", item);
+				uni.navigateTo({
+					url: "/pages/candidateList/candidateList?selectStatus=2"
 				})
 			},
 		}
