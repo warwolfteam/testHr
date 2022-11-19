@@ -119,7 +119,7 @@
 			toCandidateDetail(item) {
 				console.log("点击候选人", item);
 				uni.navigateTo({
-					url: "/pages/candidateDetail/candidateDetail?id=" + item.id
+					url: "/pages/candidateList/candidateDetail?id=" + item.id
 				})
 			},
 		}
