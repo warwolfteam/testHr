@@ -15,6 +15,60 @@
 /* 颜色变量 */
 @import "uview-ui/theme.scss";
 // @import "uview-ui/index.scss";
+/* 引入阿里巴巴图标库 */
+@font-face {
+		font-family: "iconfont";
+		/* Project id 3771275 */
+		src: url('//at.alicdn.com/t/c/font_3771275_vv4ip0plhr.woff2?t=1668841142278') format('woff2'),
+			url('//at.alicdn.com/t/c/font_3771275_vv4ip0plhr.woff?t=1668841142278') format('woff'),
+			url('//at.alicdn.com/t/c/font_3771275_vv4ip0plhr.ttf?t=1668841142278') format('truetype');
+	}
+
+	.iconfont {
+		font-family: "iconfont" !important;
+		font-size: 16px;
+		font-style: normal;
+		-webkit-font-smoothing: antialiased;
+		-moz-osx-font-smoothing: grayscale;
+	}
+
+	.icon-nanxingfuhao:before {
+		content: "\e62d";
+	}
+
+	.icon-nvxing:before {
+		content: "\ee2c";
+	}
+
+	.icon-fanhui:before {
+		content: "\e615";
+	}
+
+	.icon-order_fill:before {
+		content: "\e713";
+	}
+
+	.icon-order:before {
+		content: "\e714";
+	}
+
+	.icon-home:before {
+		content: "\e674";
+	}
+
+	.icon-user:before {
+		content: "\e682";
+	}
+
+	.icon-user-filling:before {
+		content: "\e68b";
+	}
+
+	.icon-home-filling:before {
+		content: "\e68d";
+	}
+	
+/* 引入阿里巴巴图标库 */
 /* 行为相关颜色 */
 $uni-color-primary: #007aff;
 $uni-color-success: #4cd964;
