@@ -120,6 +120,17 @@
 			}
 		}]
 	}, {
+		"root": "pages/candidateList",
+		"pages": [{
+			"path": "candidateList",
+			"style": {
+				"navigationBarTitleText": "候选人管理",
+				"app-plus": {
+					"titleNView": true
+				}
+			}
+		}]
+	}, {
 		"root": "pages/myinfo",
 		"pages": [{
 			"path": "myinfo",
