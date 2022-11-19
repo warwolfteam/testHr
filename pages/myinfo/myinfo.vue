@@ -17,7 +17,7 @@
 							:border-bottom="true"
 							:arrow="false"></u-cell-item>
 						<u-cell-item title="联系人姓名/电话"
-							label="周金源/18172777718"
+							label="周**/181*****718"
 							:border-top="false"
 							:border-bottom="false"
 							:arrow="false"></u-cell-item>
