@@ -13,6 +13,7 @@
 						:key="tags.id">
 						<u-tag :text="tags.text"
 							:type="tags.type"
+							size="mini"
 							:mode="tags.mode" />
 					</view>
 				</view>
@@ -277,7 +278,7 @@
 				if (e.content.text == "联系顾问") {
 					console.log("进入联系顾问流程");
 					uni.navigateTo({
-						url: "/pages/taskDetail/lianxikefu?id=10" 
+						url: "/pages/taskDetail/lianxikefu?id=10"
 					})
 				} else {
 					console.log("点击位置图标");
@@ -364,7 +365,7 @@
 			}
 
 			.zhiWei-biaoqian {
-				margin-top: 50rpx;
+				margin-top: 70rpx;
 
 				.zhiWei-fuli {
 					float: left;

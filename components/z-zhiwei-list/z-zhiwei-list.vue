@@ -19,14 +19,16 @@
 						:key="tags.id">
 						<u-tag :text="tags.text"
 							:type="tags.type"
-							:mode="tags.mode" />
+							:mode="tags.mode"
+							size="mini" />
 					</view>
 				</view>
 				<view class="zhiWei-fanxian"
 					v-if="item.fanxian">
 					<u-tag :text="item.fanxian"
 						type="warning"
-						mode="light" />
+						mode="light"
+						size="mini" />
 				</view>
 			</view>
 			<view class="zhiWei-xingzhi"> {{ item.area }}|{{ item.peopleNumber }}|薪酬{{ item.taskMoney }}
@@ -87,7 +89,7 @@
 	scoped>
 	.zhiWeiList {
 		margin: 20rpx;
-		height: 360rpx;
+		height: 380rpx;
 		background-color: #fff;
 		border-radius: 15px;
 
@@ -122,7 +124,8 @@
 		}
 
 		.zhiWei-biaoqian {
-			margin-top: 50rpx;
+			width: 100%;
+			margin-top: 80rpx;
 
 			.zhiWei-fuli {
 				float: left;
@@ -171,8 +174,8 @@
 		}
 
 		.zhiWei-line {
-			margin-top: 220rpx;
-			padding: 20rpx;
+			margin-top: 250rpx;
+			padding-top: 20rpx;
 			float: inherit;
 		}
 
