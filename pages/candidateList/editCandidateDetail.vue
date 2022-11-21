@@ -65,6 +65,12 @@
 									type="text"
 									:border="false" />
 							</u-cell-item>
+							<u-cell-item title="学历"
+								:border-top="false"
+								:border-bottom="true"
+								:label="xueli"
+								:arrow="true">
+							</u-cell-item>
 							<u-cell-item title="专业"
 								:border-top="false"
 								:border-bottom="true"
@@ -121,7 +127,8 @@
 						<view class="candidate-cell-name">
 							<span class="userName">工作经历</span>
 						</view>
-						<view class="candidate-cell-icon">
+						<view class="candidate-cell-icon"
+							@click="onAddGongzuojingli">
 							<u-icon name="plus-circle"
 								color="#5e5f64"
 								size="40"></u-icon>
@@ -162,6 +169,7 @@
 				idCardNumber: "",
 				sex: "请选择性别",
 				year: "",
+				xueli: "请选择学历",
 				zhuangye: "",
 				biyeTime: "请选择毕业时间（选填）",
 				juzhidizhi: "请输入现居住地（选填）",
@@ -208,6 +216,13 @@
 				uni.navigateBack({
 					delta: 1
 				});
+			},
+			// addgongzuojingli
+			onAddGongzuojingli() {
+				console.log("点击添加工作经历");
+				uni.navigateTo({
+					url: "/pages/candidateList/addgongzuojingli?id=1"
+				})
 			}
 		}
 	}

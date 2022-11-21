@@ -145,6 +145,14 @@
 					"titleNView": true
 				}
 			}
+		}, {
+			"path": "addgongzuojingli",
+			"style": {
+				"navigationBarTitleText": "添加工作经历",
+				"app-plus": {
+					"titleNView": true
+				}
+			}
 		}]
 	}, {
 		"root": "pages/myinfo",
