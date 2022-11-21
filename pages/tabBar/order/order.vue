@@ -44,7 +44,7 @@
 							:border-top="false"
 							:border-bottom="false"
 							:arrow="true"
-							@click="callPhone">
+							@click="toAddCandidateDetail">
 							<view class="lefticon"
 								slot="icon">
 								<u-icon size="60"
@@ -110,7 +110,13 @@
 				console.log("父组件的addHouXuanRen", item);
 				this.itemCache = item;
 				this.showAddHouXuanRen = true;
-			}
+			},
+			toAddCandidateDetail() {
+				console.log("点击添加候选人");
+				uni.navigateTo({
+					url: "/pages/candidateList/addCandidateDetail?type=1"
+				})
+			},
 		}
 	}
 </script>

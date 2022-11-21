@@ -130,6 +130,14 @@
 				}
 			}
 		}, {
+			"path": "addCandidateDetail",
+			"style": {
+				"navigationBarTitleText": "添加候选人",
+				"app-plus": {
+					"titleNView": true
+				}
+			}
+		},{
 			"path": "candidateDetail",
 			"style": {
 				"navigationBarTitleText": "候选人详情",
