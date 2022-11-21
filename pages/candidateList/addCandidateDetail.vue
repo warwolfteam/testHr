@@ -143,28 +143,6 @@
 					</view>
 				</view>
 				<view class="gongzuojinli"
-					v-if="showList==0">
-					<view class="gongzuojinli-cell">
-						<view class="candidate-cell-name">
-							<u-cell-group :border="false">
-								<u-cell-item title="姓名"
-									:border-top="false"
-									:border-bottom="false"
-									:use-label-slot="false"
-									:arrow="true">
-									<u-input slot="label"
-										placeholder="请输入姓名"
-										v-model="username"
-										input-align="left"
-										type="text"
-										:border="false" />
-								</u-cell-item>
-							</u-cell-group>
-							<!-- <span class="userName">工作经历</span> -->
-						</view>
-					</view>
-				</view>
-				<view class="gongzuojinli"
 					v-if="showList==1">
 					<view class="gongzuojinli-cell">
 						<view class="candidate-cell-name">
@@ -189,6 +167,23 @@
 						<view class="text-box"
 							scroll-y="true">
 							<text>{{item.text}}</text>
+						</view>
+					</view>
+				</view>
+				<view class="gongzuojinli-unknow"
+					v-if="showList==0">
+					<view class="gongzuojinli-cell">
+						<u-cell-group :border="false">
+							<u-cell-item title="工作经历"
+								value="添加工作经历"
+								:border-top="false"
+								:border-bottom="false"
+								:use-label-slot="false"
+								:arrow="true"
+								@click="onAddGongzuojingli">
+							</u-cell-item>
+						</u-cell-group>
+						<view class="candidate-cell-name">
 						</view>
 					</view>
 				</view>
@@ -229,8 +224,8 @@
 				showBiyeTime: false,
 				showSex: false,
 				showXueli: false,
-				username: "李四",
-				phone: "13989898556",
+				username: "",
+				phone: "",
 				idCardNumber: "",
 				sex: "请选择性别",
 				year: "",
@@ -239,7 +234,7 @@
 				biyeTime: "请选择毕业时间（选填）",
 				juzhidizhi: "请选择现居住地（选填）",
 				xiangxidizhi: "",
-				mianshiTime: "下午三点",
+				mianshiTime: "",
 				gzjlList: [{
 					id: "0",
 					time: "2014.11-2022.10",
@@ -406,6 +401,13 @@
 					}
 				});
 			},
+			// addgongzuojingli
+			onAddGongzuojingli() {
+				console.log("点击添加工作经历");
+				uni.navigateTo({
+					url: "/pages/candidateList/addgongzuojingli?id=1"
+				})
+			}
 		}
 	}
 </script>
@@ -524,6 +526,54 @@
 							float: right;
 							height: 50rpx;
 						}
+					}
+
+					.jianliList {
+						padding: 30rpx;
+
+						.gongzuojinli-jianli {
+							width: 100%;
+							height: 50rpx;
+							margin-top: 30rpx;
+							margin-bottom: 10rpx;
+
+							// padding-left: 25rpx;
+							// padding-right: 25rpx;
+							.gongzuojinli-jianli-zhiwei {
+								float: left;
+								display: flex;
+
+								.zhiwei {
+									align-items: center;
+									font-size: 34rpx;
+									font-weight: 1000;
+									color: #181818;
+								}
+							}
+
+							.gongzuojinli-jianli-time {
+								float: right;
+								font-size: 24rpx;
+								color: #979797;
+							}
+						}
+					}
+				}
+
+				.gongzuojinli-unknow {
+					height: 180rpx;
+					background-color: #ffffff;
+					padding: 30rpx;
+					margin-bottom: 180rpx;
+					margin-left: 20rpx;
+					margin-right: 20rpx;
+					border-radius: 18rpx;
+
+					.gongzuojinli-cell {
+						width: 100%;
+						height: 60rpx;
+						margin-top: 10rpx;
+						margin-bottom: 10rpx;
 					}
 
 					.jianliList {

@@ -131,13 +131,6 @@
 					delta: 1
 				});
 			},
-			// addgongzuojingli
-			onAddGongzuojingli() {
-				console.log("点击添加工作经历");
-				uni.navigateTo({
-					url: "/pages/candidateList/addgongzuojingli?id=1"
-				})
-			}
 		}
 	}
 </script>
@@ -146,8 +139,8 @@
 	.container {
 		background-color: #a2a2a247;
 		width: 100%;
-		// height: 100vh;
 
+		// height: 100vh;
 		.select {
 			background-color: #ffffff;
 			margin-bottom: 20rpx;
