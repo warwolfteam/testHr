@@ -128,7 +128,8 @@
         "usingComponents" : true,
         "uniStatistics" : {
             "enable" : false
-        }
+        },
+        "appid" : "testAppId"
     },
     "mp-jd" : {
         "usingComponents" : true,
