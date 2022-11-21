@@ -137,7 +137,7 @@
 					"titleNView": true
 				}
 			}
-		},{
+		}, {
 			"path": "candidateDetail",
 			"style": {
 				"navigationBarTitleText": "候选人详情",
@@ -203,6 +203,25 @@
 			"path": "helpdetail",
 			"style": {
 				"navigationBarTitleText": "帮助中心",
+				"app-plus": {
+					"titleNView": true
+				}
+			}
+		}]
+	}, {
+		"root": "pages/daoru",
+		"pages": [{
+			"path": "excel",
+			"style": {
+				"navigationBarTitleText": "批量导入候选人",
+				"app-plus": {
+					"titleNView": true
+				}
+			}
+		}, {
+			"path": "qrcode",
+			"style": {
+				"navigationBarTitleText": "邀请候选人扫码",
 				"app-plus": {
 					"titleNView": true
 				}

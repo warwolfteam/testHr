@@ -55,7 +55,8 @@
 							label="发送职位二维码,邀请候选人主动报名"
 							:border-top="false"
 							:border-bottom="false"
-							:arrow="true">
+							:arrow="true"
+							@click="toDaoruQrcode">
 							<view class="lefticon"
 								slot="icon">
 								<u-icon size="60"
@@ -66,7 +67,8 @@
 							label="通过Excel模板批量添加"
 							:border-top="false"
 							:border-bottom="false"
-							:arrow="true">
+							:arrow="true"
+							@click="toDaoruExcel">
 							<view class="lefticon"
 								slot="icon">
 								<u-icon size="60"
@@ -115,6 +117,18 @@
 				console.log("点击添加候选人");
 				uni.navigateTo({
 					url: "/pages/candidateList/addCandidateDetail?type=1"
+				})
+			},
+			toDaoruExcel() {
+				console.log("点击Excel批量导入");
+				uni.navigateTo({
+					url: "/pages/daoru/excel"
+				})
+			},
+			toDaoruQrcode() {
+				console.log("点击邀请候选人扫码");
+				uni.navigateTo({
+					url: "/pages/daoru/qrcode"
 				})
 			},
 		}
