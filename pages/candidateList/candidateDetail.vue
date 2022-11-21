@@ -22,7 +22,7 @@
 					<view class="candidate-mianshi">
 						<view class="candidate-mianshi-shijian">
 							<span class="xinxi">期望面试时间：</span>
-							<span class="xinxi">1000</span>
+							<span class="xinxi">{{mianshiTime}}</span>
 						</view>
 						<view class="candidate-mianshi-edit">
 							<u-icon name="edit-pen"
@@ -97,7 +97,7 @@
 			border-radius="14">
 			<view class="qiwang">
 				<view class="qiwang-input">
-					<u-input v-model="value"
+					<u-input v-model="mianshiTime"
 						type="textarea"
 						:border="true"
 						height="200"
@@ -135,6 +135,7 @@
 				zhuangye: "--",
 				biyeTime: "--",
 				juzhidizhi: "--",
+				mianshiTime: "下午三点",
 				gzjlList: [{
 					id: "0",
 					time: "2014.11-2022.10",
@@ -169,6 +170,7 @@
 			},
 			onMianShi() {
 				console.log("填写期望面试时间");
+				this.show = false;
 			}
 		}
 	}
@@ -388,11 +390,9 @@
 			.qiwang-input {
 				width: 90%;
 				align-items: center;
-				
 			}
 
 			.qiwang-bottom {
-				
 				align-items: center;
 				margin-left: 30rpx;
 				padding-top: 14%;
