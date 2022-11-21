@@ -366,12 +366,13 @@
 		}
 
 		.candidate-botton {
+			z-index: 999;
 			width: 100%;
 			background-color: #fff;
 			position: fixed;
 			bottom: 0;
-			padding-top: 10rpx;
-			padding-bottom: 10rpx;
+			padding-top: 30rpx;
+			padding-bottom: 30rpx;
 			padding-left: 30rpx;
 			padding-right: 30rpx;
 		}
