@@ -59,6 +59,7 @@
 				<view class="task-caozuo">
 					<u-button size="mini"
 						:plain="true"
+						@click="addHouXuanRen(item)"
 						type="warning">添加候选人</u-button>
 				</view>
 				<view class="task-caozuo">
@@ -92,6 +93,10 @@
 				uni.navigateTo({
 					url: "/pages/taskDetail/lianxikefu?id=" + item.id
 				})
+			},
+			addHouXuanRen(item) {
+				console.log("添加候选人-item：", item);
+				this.$emit('send_addHouXuanRen',item)
 			},
 			toOrderDetail(item) {
 				console.log("点击事件触发toDetail--item：", item);
