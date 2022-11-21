@@ -6,7 +6,7 @@
 					<view class="candidate-jichuxinxi">
 						<u-cell-group :border="false">
 							<u-cell-item title="在职时间"
-								:hover-class="false"
+								hover-class="none"
 								:border-top="false"
 								:border-bottom="true"
 								:use-label-slot="true"
@@ -40,7 +40,7 @@
 								</view>
 							</u-cell-item>
 							<u-cell-item title="岗位名称"
-								:hover-class="false"
+								hover-class="none"
 								:border-top="false"
 								:border-bottom="false"
 								:use-label-slot="true"
