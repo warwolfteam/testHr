@@ -1,29 +1,40 @@
 <template>
 	<view class="container">
 		<view class="paixu">
-			<view class="wangzhi"> {{qrcodeUrl}} </view>
+			<view class="wangzhi">
+				<uqrcode ref="uqrcode"
+					canvas-id="qrcode"
+					:value="qrcodeUrl"
+					:options="{ margin: 20 }"
+					size="234"></uqrcode>
+			</view>
 			<view class="miaoshu"> 请保存该二维码 </view>
 			<view class="anniu">
 				<u-button type="warning"
 					size="medium"
-					@click="copy">保存二维码</u-button>
+					@click="createQrCode">保存二维码</u-button>
 			</view>
 		</view>
 	</view>
 </template>
 <script>
+	import UQRCode from '@uqrcode/js';
 	export default {
 		data() {
 			return {
 				qrcodeUrl: "www.testhr.com"
 			}
 		},
+		mounted() {},
 		methods: {
-			copy() {
-				uni.setClipboardData({
-					data: this.qrcodeUrl,
-					success: function() {
-						console.log('success');
+			createQrCode() {
+				// uqrcode为组件的ref名称
+				this.$refs.uqrcode.save({
+					success: () => {
+						uni.showToast({
+							icon: 'success',
+							title: '保存成功'
+						});
 					}
 				});
 			}

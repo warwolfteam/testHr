@@ -53,7 +53,7 @@
 			}
 
 			.wangzhi {
-				margin-top: 20rpx;
+				margin: 20rpx;
 				font-size: 40rpx;
 				font-weight: 1000;
 			}

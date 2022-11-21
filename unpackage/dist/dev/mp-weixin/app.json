@@ -43,10 +43,41 @@
       ]
     },
     {
+      "root": "pages/orderDetail",
+      "pages": [
+        "orderDetail"
+      ]
+    },
+    {
+      "root": "pages/candidateList",
+      "pages": [
+        "candidateList",
+        "addCandidateDetail",
+        "candidateDetail",
+        "editCandidateDetail",
+        "addgongzuojingli"
+      ]
+    },
+    {
+      "root": "pages/myinfo",
+      "pages": [
+        "myinfo",
+        "info",
+        "bank"
+      ]
+    },
+    {
       "root": "pages/help",
       "pages": [
         "help",
         "helpdetail"
+      ]
+    },
+    {
+      "root": "pages/daoru",
+      "pages": [
+        "excel",
+        "qrcode"
       ]
     }
   ],

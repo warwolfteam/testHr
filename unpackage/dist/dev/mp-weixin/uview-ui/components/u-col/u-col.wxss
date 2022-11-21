@@ -12,6 +12,56 @@
  * 如果你的项目同样使用了scss预处理，你也可以直接在你的 scss 代码中使用如下变量，同时无需 import 这个文件
  */
 /* 颜色变量 */
+/* 引入阿里巴巴图标库 */
+@font-face {
+  font-family: "iconfont";
+  /* Project id 3771275 */
+  src: url("//at.alicdn.com/t/c/font_3771275_72dypz7f29g.woff2?t=1669017191643") format("woff2"), url("//at.alicdn.com/t/c/font_3771275_72dypz7f29g.woff?t=1669017191643") format("woff"), url("//at.alicdn.com/t/c/font_3771275_72dypz7f29g.ttf?t=1669017191643") format("truetype");
+}
+.iconfont {
+  font-family: "iconfont" !important;
+  font-size: 16px;
+  font-style: normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+.icon-hongbao:before {
+  content: "\e627";
+}
+.icon-huiyuanshenfen:before {
+  content: "\e628";
+}
+.icon-jilu:before {
+  content: "\e629";
+}
+.icon-nanxingfuhao:before {
+  content: "\e62d";
+}
+.icon-nvxing:before {
+  content: "\ee2c";
+}
+.icon-fanhui:before {
+  content: "\e615";
+}
+.icon-order_fill:before {
+  content: "\e713";
+}
+.icon-order:before {
+  content: "\e714";
+}
+.icon-home:before {
+  content: "\e674";
+}
+.icon-user:before {
+  content: "\e682";
+}
+.icon-user-filling:before {
+  content: "\e68b";
+}
+.icon-home-filling:before {
+  content: "\e68d";
+}
+/* 引入阿里巴巴图标库 */
 /* 行为相关颜色 */
 /* 文字基本颜色 */
 /* 背景颜色 */
