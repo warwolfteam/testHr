@@ -641,7 +641,10 @@
 			left: var(--window-left);
 			right: var(--window-right);
 			/* #endif */
+			padding-top: 3%;
+			padding-bottom: 5%;
 			bottom: 0;
+			background-color: #fff;
 		}
 	}
 </style>
