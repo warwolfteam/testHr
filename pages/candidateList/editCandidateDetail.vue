@@ -51,7 +51,8 @@
 								:border-top="false"
 								:border-bottom="true"
 								:label="sex"
-								:arrow="true">
+								:arrow="true"
+								@click="selectSex">
 							</u-cell-item>
 							<u-cell-item title="年龄"
 								:border-top="false"
@@ -69,7 +70,8 @@
 								:border-top="false"
 								:border-bottom="true"
 								:label="xueli"
-								:arrow="true">
+								:arrow="true"
+								@click="selectXueli">
 							</u-cell-item>
 							<u-cell-item title="专业"
 								:border-top="false"
@@ -87,13 +89,15 @@
 								:border-top="false"
 								:border-bottom="true"
 								:label="biyeTime"
-								:arrow="true">
+								:arrow="true"
+								@click="selectBiyeTime">
 							</u-cell-item>
 							<u-cell-item title="现居住地"
 								:border-top="false"
 								:border-bottom="true"
 								:label="juzhidizhi"
-								:arrow="true">
+								:arrow="true"
+								@click="selectCity">
 							</u-cell-item>
 							<u-cell-item title="详细地址"
 								:border-top="false"
@@ -151,6 +155,21 @@
 				</view>
 			</view>
 		</view>
+		<u-select v-model="showCity"
+			mode="mutil-column-auto"
+			:list="cityList"
+			@confirm="confirmCity"></u-select>
+		<u-calendar v-model="showBiyeTime"
+			@change="confirmBiyeTime"
+			mode="date"></u-calendar>
+		<u-select v-model="showSex"
+			mode="mutil-column-auto"
+			:list="sexList"
+			@confirm="confirmSex"></u-select>
+		<u-select v-model="showXueli"
+			mode="mutil-column-auto"
+			:list="xueliList"
+			@confirm="confirmXueli"></u-select>
 		<view class="candidate-botton">
 			<u-button type="warning"
 				@click="onSubmit">提交</u-button>
@@ -164,6 +183,10 @@
 		data() {
 			return {
 				show: false,
+				showCity: false,
+				showBiyeTime: false,
+				showSex: false,
+				showXueli: false,
 				username: "李四",
 				phone: "13989898556",
 				idCardNumber: "",
@@ -172,7 +195,7 @@
 				xueli: "请选择学历",
 				zhuangye: "",
 				biyeTime: "请选择毕业时间（选填）",
-				juzhidizhi: "请输入现居住地（选填）",
+				juzhidizhi: "请选择现居住地（选填）",
 				xiangxidizhi: "",
 				mianshiTime: "下午三点",
 				gzjlList: [{
@@ -190,6 +213,74 @@
 					time: "2014.11-2022.10",
 					zhiwei: "前台",
 					text: "前台前台前台前台前台前台前台前台前台前台前台前台前台前台前台前台前台前台前台前台前台前台前台前台前台前台前台前台前台前台前台前台前台前台前台前台前台前台前台前台前台前台前台前台前台前台前台前台前台前台前台前台前台前台前台前台前台前台前台前台前台前台前台前台前台前台前台前台前台前台"
+				}],
+				cityList: [{
+					value: 1,
+					label: '中国',
+					children: [{
+						value: 2,
+						label: '广东',
+						children: [{
+							value: 3,
+							label: '深圳'
+						}, {
+							value: 4,
+							label: '广州'
+						}]
+					}, {
+						value: 5,
+						label: '广西',
+						children: [{
+							value: 6,
+							label: '南宁'
+						}, {
+							value: 7,
+							label: '桂林'
+						}]
+					}]
+				}, {
+					value: 8,
+					label: '美国',
+					children: [{
+						value: 9,
+						label: '纽约',
+						children: [{
+							value: 10,
+							label: '皇后街区'
+						}]
+					}]
+				}],
+				sexList: [{
+					value: 0,
+					label: '男性',
+				}, {
+					value: 1,
+					label: '女性',
+				}],
+				xueliList: [{
+					value: 2,
+					label: '小学',
+				}, {
+					value: 3,
+					label: '初中',
+				}, {
+					value: 4,
+					label: '中专',
+				}, {
+					value: 5,
+					label: '高中',
+				}, {
+					value: 6,
+					label: '大专',
+				}, {
+					value: 7,
+					label: '本科',
+				}, {
+					value: 8,
+					label: '硕士研究生',
+				}, {
+					value: 9,
+					label: '博士研究生',
 				}]
 			}
 		},
@@ -223,7 +314,43 @@
 				uni.navigateTo({
 					url: "/pages/candidateList/addgongzuojingli?id=1"
 				})
-			}
+			},
+			selectCity() {
+				console.log("点击选择城市");
+				this.showCity = true;
+			},
+			confirmCity(e) {
+				console.log("点击省市确定", e);
+				console.log(e[0].label + "-" + e[1].label + "-" + e[2].label);
+				this.juzhidizhi = e[1].label + "-" + e[2].label;
+			},
+			selectBiyeTime() {
+				console.log("点击选择毕业时间");
+				this.showBiyeTime = true;
+			},
+			confirmBiyeTime(e) {
+				console.log("点击confirmEndTime", e);
+				console.log("e.result:", e.result);
+				this.biyeTime = e.result;
+			},
+			selectSex() {
+				console.log("点击选择性别");
+				this.showSex = true;
+			},
+			confirmSex(e) {
+				console.log("点击confirmSex", e);
+				console.log(e[0].label);
+				this.sex = e[0].label;
+			},
+			selectXueli() {
+				console.log("点击选择学历");
+				this.showXueli = true;
+			},
+			confirmXueli(e) {
+				console.log("点击confirmXueli", e);
+				console.log(e[0].label);
+				this.xueli = e[0].label;
+			},
 		}
 	}
 </script>
