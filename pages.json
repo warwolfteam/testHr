@@ -137,6 +137,14 @@
 					"titleNView": true
 				}
 			}
+		}, {
+			"path": "editCandidateDetail",
+			"style": {
+				"navigationBarTitleText": "编辑候选人详情",
+				"app-plus": {
+					"titleNView": true
+				}
+			}
 		}]
 	}, {
 		"root": "pages/myinfo",

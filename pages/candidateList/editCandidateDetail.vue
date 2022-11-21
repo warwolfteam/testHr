@@ -1,69 +1,117 @@
 <template>
 	<view class="container">
 		<view class="bg">
+			<view class="candidate-cell">
+				<view class="candidate-cell-name">
+					<span class="userName">基本信息</span>
+				</view>
+			</view>
 			<!-- 候选人详情 -->
 			<view class="allList">
 				<view class="candidate">
-					<view class="candidate-cell">
-						<view class="candidate-cell-name">
-							<span class="userName">李四</span>
-							<span class="sexIcon">
-								<i class="iconfont icon-nvxing"></i>
-							</span>
-						</view>
-						<view class="candidate-cell-status"> 新添加 </view>
-					</view>
-					<view class="candidate-miaosu">
-						<view class="candidate-miaosu-xinxi">
-							<span class="xinxi">男 | 31岁 | 大专</span>
-						</view>
-						<view class="candidate-miaosu-time"> 2天前 </view>
-					</view>
-					<view class="candidate-mianshi">
-						<view class="candidate-mianshi-shijian">
-							<span class="xinxi">期望面试时间：</span>
-							<span class="xinxi">{{mianshiTime}}</span>
-						</view>
-						<view class="candidate-mianshi-edit">
-							<u-icon name="edit-pen"
-								color="#00ff00"
-								size="28"
-								@click="editMianShi"></u-icon>
-						</view>
-					</view>
 					<view class="candidate-jichuxinxi">
 						<u-cell-group :border="false">
+							<u-cell-item title="姓名"
+								:border-top="false"
+								:border-bottom="true"
+								:use-label-slot="true"
+								:arrow="false">
+								<u-input slot="label"
+									placeholder="请输入姓名"
+									v-model="username"
+									input-align="left"
+									type="text"
+									:border="false" />
+							</u-cell-item>
 							<u-cell-item title="手机号"
 								:border-top="false"
 								:border-bottom="true"
-								:arrow="false"
-								@click="callPhone">
-								<view slot="right-icon">
-									{{phone}}
-									<u-icon size="26"
-										name="phone"></u-icon>
-								</view>
+								:use-label-slot="true"
+								:arrow="false">
+								<u-input slot="label"
+									placeholder="请输入手机号"
+									v-model="phone"
+									input-align="left"
+									type="text"
+									:border="false" />
+							</u-cell-item>
+							<u-cell-item title="身份证号"
+								:border-top="false"
+								:border-bottom="true"
+								:use-label-slot="true"
+								:arrow="false">
+								<u-input slot="label"
+									placeholder="请输入身份证号"
+									v-model="idCardNumber"
+									input-align="left"
+									type="text"
+									:border="false" />
+							</u-cell-item>
+							<u-cell-item title="性别"
+								:border-top="false"
+								:border-bottom="true"
+								:label="sex"
+								:arrow="true">
+							</u-cell-item>
+							<u-cell-item title="年龄"
+								:border-top="false"
+								:border-bottom="true"
+								:use-label-slot="true"
+								:arrow="false">
+								<u-input slot="label"
+									placeholder="请输入年龄"
+									v-model="year"
+									input-align="left"
+									type="text"
+									:border="false" />
 							</u-cell-item>
 							<u-cell-item title="专业"
-								hover-class="none"
-								:value="zhuangye"
 								:border-top="false"
 								:border-bottom="true"
+								:use-label-slot="true"
 								:arrow="false">
+								<u-input slot="label"
+									placeholder="请输入专业(选填)"
+									v-model="zhuangye"
+									input-align="left"
+									type="text"
+									:border="false" />
 							</u-cell-item>
 							<u-cell-item title="毕业时间"
-								hover-class="none"
-								:value="biyeTime"
 								:border-top="false"
 								:border-bottom="true"
-								:arrow="false">
+								:label="biyeTime"
+								:arrow="true">
 							</u-cell-item>
 							<u-cell-item title="现居住地"
-								hover-class="none"
-								:value="juzhidizhi"
 								:border-top="false"
-								:border-bottom="false"
+								:border-bottom="true"
+								:label="juzhidizhi"
+								:arrow="true">
+							</u-cell-item>
+							<u-cell-item title="详细地址"
+								:border-top="false"
+								:border-bottom="true"
+								:use-label-slot="true"
 								:arrow="false">
+								<u-input slot="label"
+									placeholder="请输入详细地址(选填)"
+									v-model="xiangxidizhi"
+									input-align="left"
+									type="text"
+									:border="false" />
+							</u-cell-item>
+							<u-cell-item title="期望面试时间"
+								:border-top="false"
+								:border-bottom="true"
+								:use-label-slot="true"
+								:arrow="false">
+								<u-input slot="label"
+									placeholder="请输入期望面试时间(选填)"
+									v-model="mianshiTime"
+									input-align="left"
+									type="text"
+									:border="false" />
 							</u-cell-item>
 						</u-cell-group>
 					</view>
@@ -72,6 +120,11 @@
 					<view class="gongzuojinli-cell">
 						<view class="candidate-cell-name">
 							<span class="userName">工作经历</span>
+						</view>
+						<view class="candidate-cell-icon">
+							<u-icon name="plus-circle"
+								color="#5e5f64"
+								size="40"></u-icon>
 						</view>
 					</view>
 					<view class="jianliList"
@@ -91,28 +144,9 @@
 				</view>
 			</view>
 		</view>
-		<u-popup v-model="show"
-			mode="bottom"
-			height="25%"
-			border-radius="14">
-			<view class="qiwang">
-				<view class="qiwang-input">
-					<u-input v-model="mianshiTime"
-						type="textarea"
-						:border="true"
-						height="200"
-						:auto-height="true" />
-				</view>
-				<view class="qiwang-bottom">
-					<u-button size="mini"
-						type="warning"
-						@click="onMianShi">确定</u-button>
-				</view>
-			</view>
-		</u-popup>
 		<view class="candidate-botton">
 			<u-button type="warning"
-				@click="onEdit">编辑候选人信息</u-button>
+				@click="onSubmit">提交</u-button>
 		</view>
 	</view>
 </template>
@@ -123,10 +157,15 @@
 		data() {
 			return {
 				show: false,
+				username: "李四",
 				phone: "13989898556",
-				zhuangye: "--",
-				biyeTime: "--",
-				juzhidizhi: "--",
+				idCardNumber: "",
+				sex: "请选择性别",
+				year: "",
+				zhuangye: "",
+				biyeTime: "请选择毕业时间（选填）",
+				juzhidizhi: "请输入现居住地（选填）",
+				xiangxidizhi: "",
 				mianshiTime: "下午三点",
 				gzjlList: [{
 					id: "0",
@@ -164,11 +203,11 @@
 				console.log("填写期望面试时间");
 				this.show = false;
 			},
-			onEdit() {
+			onSubmit() {
 				console.log("点击编辑候选人信息");
-				uni.navigateTo({
-					url: "/pages/candidateList/editCandidateDetail?id=1"
-				})
+				uni.navigateBack({
+					delta: 1
+				});
 			}
 		}
 	}
@@ -190,6 +229,30 @@
 			padding-top: 30rpx;
 			padding-bottom: 30rpx;
 
+			.candidate-cell {
+				width: 100%;
+				height: 60rpx;
+				margin-top: 10rpx;
+				margin-bottom: 10rpx;
+				padding-left: 25rpx;
+				padding-right: 25rpx;
+
+				.candidate-cell-name {
+					float: left;
+					display: flex;
+					height: 50rpx;
+
+					.userName {
+						height: 50rpx;
+						line-height: 50rpx;
+						align-items: center;
+						margin-right: 20rpx;
+						font-size: 38rpx;
+						font-weight: 1000;
+					}
+				}
+			}
+
 			.allList {
 				.candidate {
 					// height: 180rpx;
@@ -199,94 +262,6 @@
 					margin-left: 20rpx;
 					margin-right: 20rpx;
 					border-radius: 18rpx;
-
-					.candidate-cell {
-						width: 100%;
-						height: 60rpx;
-						margin-top: 10rpx;
-						margin-bottom: 10rpx;
-						padding-left: 25rpx;
-						padding-right: 25rpx;
-
-						.candidate-cell-name {
-							float: left;
-							display: flex;
-							height: 50rpx;
-
-							.userName {
-								height: 50rpx;
-								line-height: 50rpx;
-								align-items: center;
-								margin-right: 20rpx;
-								font-size: 38rpx;
-								font-weight: 1000;
-							}
-
-							.sexIcon {
-								height: 50rpx;
-								line-height: 50rpx;
-								align-items: center;
-								font-size: 18rpx;
-								color: #0055ff;
-							}
-						}
-
-						.candidate-cell-status {
-							float: right;
-						}
-					}
-
-					.candidate-miaosu {
-						width: 100%;
-						height: 50rpx;
-						margin-top: 10rpx;
-						margin-bottom: 10rpx;
-						padding-left: 25rpx;
-						padding-right: 25rpx;
-
-						.candidate-miaosu-xinxi {
-							float: left;
-							display: flex;
-
-							.xinxi {
-								align-items: center;
-								font-size: 24rpx;
-								color: #717171;
-							}
-						}
-
-						.candidate-miaosu-time {
-							float: right;
-							font-size: 24rpx;
-							color: #717171;
-						}
-					}
-
-					.candidate-mianshi {
-						width: 100%;
-						height: 50rpx;
-						margin-top: 10rpx;
-						margin-bottom: 10rpx;
-						padding-left: 25rpx;
-						padding-right: 25rpx;
-
-						.candidate-mianshi-shijian {
-							float: left;
-							display: flex;
-
-							.xinxi {
-								align-items: center;
-								font-size: 24rpx;
-								color: #9d9d9d;
-							}
-						}
-
-						.candidate-mianshi-edit {
-							float: right;
-							font-size: 24rpx;
-							color: #717171;
-						}
-					}
 
 					.candidate-jichuxinxi {
 						margin-top: 10rpx;
@@ -323,6 +298,11 @@
 								font-size: 38rpx;
 								font-weight: 1000;
 							}
+						}
+
+						.candidate-cell-icon {
+							float: right;
+							height: 50rpx;
 						}
 					}
 
