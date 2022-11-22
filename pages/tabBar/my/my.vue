@@ -1,7 +1,5 @@
 <template>
 	<view class="container">
-		<image class="bg-set"
-			:src="bgImageURL"></image>
 		<view class="content">
 			<view class="my-info"
 				@click="onInfo">
@@ -153,7 +151,7 @@
 		}
 	}
 </script>
-<style>
+<!-- <style>
 	/*要设置的body样式设置在这里面*/
 	page {
 		background-image: url(https://me.heimaoba.cn/static/image/mybg.png);
@@ -162,152 +160,153 @@
 		height: 100%;
 		z-index: -999;
 	}
-</style>
+</style> -->
 <style lang="scss"
 	scoped>
-	.bg-set {
-		position: fixed;
+	.container {
+		background-image: url(https://me.heimaoba.cn/static/image/mybg.png);
+		background-size: 100%;
 		width: 100%;
 		height: 100%;
-		top: 0;
-		left: 0;
-		z-index: -1;
-	}
+		z-index: -999;
+		overflow-x: hidden;
 
-	.content {
-		z-index: 100;
-
-		.my-info {
-			margin-top: 150rpx;
-			height: 200rpx;
-			// background: #000;
+		.content {
+			z-index: 100;
+			padding-top: 150rpx;
 			width: 100%;
-			padding: 50rpx;
 
-			.my-info-left {
-				float: left;
-				display: flex;
-				width: 70%;
-
-				.my-info-head {
-					align-items: center;
-					// float: left;
-				}
-
-				.my-info-xinxi {
-					align-items: center;
-					margin-left: 20rpx;
-					height: 120rpx;
-
-					.my-info-xinxi-name {
-						height: 40rpx;
-						color: #fff;
-						font-size: 40rpx;
-						font-weight: 1000;
-					}
-
-					.my-info-xinxi-company {
-						margin-top: 20rpx;
-						height: 38rpx;
-						color: #fff;
-					}
-				}
-			}
-
-			.my-info-right {
-				width: 18%;
-				float: right;
-
-				.my-info-jiantou {
-					float: right;
-					margin-top: 25rpx;
-					margin-left: 25rpx;
-				}
-			}
-		}
-
-		.my-yongjing {
-			margin-bottom: 20rpx;
-			margin-left: 20rpx;
-			margin-right: 20rpx;
-			margin-top: 30rpx;
-			height: 360rpx;
-			background-color: #fff;
-			border-radius: 15px;
-
-			.fanyong-head {
+			.my-info {
+				height: 200rpx;
+				// background: #000;
 				width: 100%;
+				padding: 50rpx;
 
-				.fanyong-tittle {
-					height: 50rpx;
-					font-size: 25px;
-					font-weight: 100;
-					margin-top: 30rpx;
-					padding-left: 20rpx;
+				.my-info-left {
 					float: left;
-				}
+					display: flex;
+					width: 70%;
 
-				.fanyong-botton {
-					float: right;
-					height: 50rpx;
-					margin-top: 30rpx;
-					padding-right: 20rpx;
+					.my-info-head {
+						align-items: center;
+						// float: left;
+					}
 
-					.fanyong-botton-zi {
+					.my-info-xinxi {
+						align-items: center;
 						margin-left: 20rpx;
+						height: 120rpx;
+
+						.my-info-xinxi-name {
+							height: 40rpx;
+							color: #fff;
+							font-size: 40rpx;
+							font-weight: 1000;
+						}
+
+						.my-info-xinxi-company {
+							margin-top: 20rpx;
+							height: 38rpx;
+							color: #fff;
+						}
+					}
+				}
+
+				.my-info-right {
+					width: 18%;
+					float: right;
+
+					.my-info-jiantou {
+						float: right;
+						margin-top: 25rpx;
+						margin-left: 25rpx;
 					}
 				}
 			}
 
-			.fanyong-xinxi {
-				float: left;
-				height: 300rpx;
-				width: 100%;
-				padding-top: 10rpx;
+			.my-yongjing {
+				margin-bottom: 20rpx;
+				margin-left: 20rpx;
+				margin-right: 20rpx;
+				margin-top: 30rpx;
+				height: 360rpx;
+				background-color: #fff;
+				border-radius: 15px;
 
-				.my-yongjing-line {
-					padding: 20rpx;
+				.fanyong-head {
+					width: 100%;
+
+					.fanyong-tittle {
+						height: 50rpx;
+						font-size: 25px;
+						font-weight: 100;
+						margin-top: 30rpx;
+						padding-left: 20rpx;
+						float: left;
+					}
+
+					.fanyong-botton {
+						float: right;
+						height: 50rpx;
+						margin-top: 30rpx;
+						padding-right: 20rpx;
+
+						.fanyong-botton-zi {
+							margin-left: 20rpx;
+						}
+					}
 				}
 
-				.fanyong-jiesuan {
+				.fanyong-xinxi {
 					float: left;
-					height: 100rpx;
+					height: 300rpx;
 					width: 100%;
 					padding-top: 10rpx;
 
-					.fanyong-xinxi-tittle {
-						margin-left: 50rpx;
-						font-weight: 10;
-						font-size: 28rpx;
-						color: #666666;
-						float: left;
-						width: 100%;
+					.my-yongjing-line {
+						padding: 20rpx;
 					}
 
-					.fanyong-xinxi-money {
-						margin-top: 10rpx;
-						margin-left: 30rpx;
-						font-weight: 1000;
-						font-size: 38rpx;
-						color: #000000;
+					.fanyong-jiesuan {
 						float: left;
+						height: 100rpx;
 						width: 100%;
+						padding-top: 10rpx;
+
+						.fanyong-xinxi-tittle {
+							margin-left: 50rpx;
+							font-weight: 10;
+							font-size: 28rpx;
+							color: #666666;
+							float: left;
+							width: 100%;
+						}
+
+						.fanyong-xinxi-money {
+							margin-top: 10rpx;
+							margin-left: 30rpx;
+							font-weight: 1000;
+							font-size: 38rpx;
+							color: #000000;
+							float: left;
+							width: 100%;
+						}
 					}
 				}
 			}
-		}
 
-		.my-list {
-			margin-bottom: 120rpx;
-			margin-left: 20rpx;
-			margin-right: 20rpx;
-			margin-top: 20rpx;
-			height: 580rpx;
-			background-color: #fff;
-			border-radius: 15px;
+			.my-list {
+				margin-bottom: 120rpx;
+				margin-left: 20rpx;
+				margin-right: 20rpx;
+				margin-top: 20rpx;
+				height: 580rpx;
+				background-color: #fff;
+				border-radius: 15px;
 
-			.my-list-kuai {
-				padding-top: 30rpx;
+				.my-list-kuai {
+					padding-top: 30rpx;
+				}
 			}
 		}
 	}
