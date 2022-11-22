@@ -3405,7 +3405,7 @@ export default {
 		"moneyType": "元/人",
 		"fanxian": "长期返",
 		"area": "全国",
-		"peopleNumber": "20人",
+		"peopleNumber": 20,
 		"taskMoney": "5-10K",
 		"taskMoneyType": "元/月",
 		"zhaopingjindu": 37,

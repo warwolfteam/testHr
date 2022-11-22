@@ -18,7 +18,7 @@
 					</view>
 				</view>
 			</view>
-			<view class="zhiWei-xingzhi"> {{ item.area }}|{{ item.peopleNumber }}|薪酬{{ item.taskMoney }}
+			<view class="zhiWei-xingzhi"> {{ item.area }}|{{ item.peopleNumber }}人|薪酬{{ item.taskMoney }}
 				{{ item.taskMoneyType }}
 			</view>
 			<view class="zhiWei-jindu-all">
@@ -224,12 +224,12 @@
 			:safe-area-inset-bottom="true"
 			:closeable="true">
 			<view class="jiedan">
-				<view class="tittle"> PCR加样（洛阳） </view>
+				<view class="tittle"> {{ item.name }}</view>
 				<u-line color="#e4e7ed"
 					margin="10rpx" />
-				<view class="info-tittle"> 佣金 | 返三个月 </view>
+				<view class="info-tittle"> 佣金 | {{ item.fanxian }} </view>
 				<view class="info-xinxi">
-					<text class="money"> 6元 </text>
+					<text class="money"> {{ item.fanyongxinxi.fanYongMoney }}元 </text>
 					<text class="other"> /人/小时 </text>
 				</view>
 				<u-line color="#e4e7ed"
@@ -314,6 +314,8 @@
 				}
 				if (e.index == 1) {
 					console.log("进入立即接单流程");
+					var number = this.item.peopleNumber;
+					this.renshu = number;
 					this.showJieDanPOP = true;
 				}
 			},
