@@ -43,7 +43,7 @@
 					border-color="#6d6d6d">已经到底了</u-divider>
 			</view>
 			<view class="kong"
-				v-if="selectValue == 2&selectValue == 3&selectValue == 4&selectValue == 5">
+				v-if="selectValue == 2||selectValue == 3||selectValue == 4||selectValue == 5">
 				<u-empty text="暂无候选人"
 					:src="noOrderDataImageURL"></u-empty>
 			</view>
