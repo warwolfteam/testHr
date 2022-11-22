@@ -72,10 +72,8 @@
 				.wangzhi {
 					width: 55%;
 					height: 45%;
-					margin-top: 35%;
-					margin-left: 23%;
-					margin-bottom: 37%;
-					margin-right: 25%;
+					padding-top: 35%;
+					padding-left: 23%;
 					font-size: 40rpx;
 					font-weight: 1000;
 				}
