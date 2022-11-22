@@ -45,7 +45,8 @@
 			</view>
 			<view class="fanyong-img"
 				:style="{backgroundImage:                             
-				        'url('+imageURL+')'}">
+				        'url('+imageURL+')'}"
+				style="background-size: 125%;height: 58%;">
 				<view class="fanyong-money"> {{ item.fanxian }} <span class="onmoney">
 						{{ item.fanyongxinxi.fanYongMoney }}元</span>/人 </view>
 				<view class="fanyong-tips"> {{ item.fanyongxinxi.tips }} </view>
