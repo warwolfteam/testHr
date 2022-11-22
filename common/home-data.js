@@ -3413,7 +3413,7 @@ export default {
 		"releaseTime": "2022-11-19",
 		"fanyongxinxi": {
 			"tips": "•满7天返400元 •满15天再返500元 •满30天再返600元",
-			"fanYongMoney": "999",
+			"fanYongMoney": "9",
 			"jiwsuantiaojian": "到岗+质保30天"
 		},
 		"fulilist": [{

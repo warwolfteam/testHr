@@ -46,8 +46,8 @@
 			<view class="fanyong-img"
 				:style="{backgroundImage:                             
 				        'url('+imageURL+')'}">
-				<view class="fanyong-money"> 一次性返 <span class="onmoney"> {{ item.fanyongxinxi.fanYongMoney }}元</span>/人
-				</view>
+				<view class="fanyong-money"> {{ item.fanxian }} <span class="onmoney">
+						{{ item.fanyongxinxi.fanYongMoney }}元</span>/人 </view>
 				<view class="fanyong-tips"> {{ item.fanyongxinxi.tips }} </view>
 			</view>
 			<view class="fanyong-jiesuan">
