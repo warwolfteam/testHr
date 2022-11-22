@@ -217,6 +217,36 @@
 				@buttonClick="taskButtonClick" />
 		</view>
 		<!-- 以下为弹出层 -->
+		<u-popup v-model="showJieDanPOP"
+			mode="bottom"
+			border-radius="14"
+			length="90%"
+			:safe-area-inset-bottom="true"
+			:closeable="true">
+			<view class="jiedan">
+				<view class="tittle"> PCR加样（洛阳） </view>
+				<u-line color="#e4e7ed"
+					margin="10rpx" />
+				<view class="info-tittle"> 佣金 | 返三个月 </view>
+				<view class="info-xinxi">
+					<text class="money"> 6元 </text>
+					<text class="other"> /人/小时 </text>
+				</view>
+				<u-line color="#e4e7ed"
+					margin="10rpx" />
+				<view class="jiedan-caozuo">
+					<view class="jiedan-zi"> 接单人数 </view>
+					<view class="jiedan-number-box">
+						<u-number-box v-model="renshu"
+							@change="renshuChange"></u-number-box>
+					</view>
+				</view>
+			</view>
+			<view class="jiedan-botton">
+				<u-button type="warning"
+					@click="onSubmit">立即接单</u-button>
+			</view>
+		</u-popup>
 		<u-toast ref="fanYongToast" />
 	</view>
 </template>
@@ -241,7 +271,9 @@
 					text: '立即接单',
 					backgroundColor: 'linear-gradient(90deg, #FE6035, #EF1224)',
 					color: '#fff'
-				}]
+				}],
+				showJieDanPOP: false,
+				renshu: 0
 			}
 		},
 		onLoad: function(option) {
@@ -262,28 +294,34 @@
 				})
 			},
 			onClickTask(e) {
+				console.log("点击左侧按钮", e);
 				uni.showToast({
 					title: `点击${e.content.text}`,
 					icon: 'none'
 				})
 			},
 			taskButtonClick(e) {
-				console.log(e);
+				console.log("点击右侧按钮", e);
 				uni.showToast({
 					title: `点击${e.content.text}`,
 					icon: 'none'
 				});
-				if (e.content.text == "立即接单") {
-					console.log("进入立即接单流程");
-				}
-				if (e.content.text == "联系顾问") {
+				if (e.index == 0) {
 					console.log("进入联系顾问流程");
 					uni.navigateTo({
 						url: "/pages/taskDetail/lianxikefu?id=10"
 					})
-				} else {
-					console.log("点击位置图标");
 				}
+				if (e.index == 1) {
+					console.log("进入立即接单流程");
+					this.showJieDanPOP = true;
+				}
+			},
+			renshuChange(e) {
+				console.log('当前值为: ' + e.value)
+			},
+			onSubmit() {
+				console.log("点击弹出层立即接单按钮");
 			}
 		}
 	}
@@ -467,7 +505,7 @@
 			.fanyong-jiesuan {
 				float: left;
 				width: 100%;
-				padding-top: 30rpx;
+				padding-top: 15rpx;
 				margin-left: 30rpx;
 			}
 		}
@@ -646,6 +684,70 @@
 			padding-bottom: 5%;
 			bottom: 0;
 			background-color: #fff;
+		}
+
+		.jiedan {
+			width: 100%;
+
+			.tittle {
+				padding: 30rpx;
+				font-size: 39rpx;
+				font-weight: 1000;
+				color: #000;
+			}
+
+			.info-tittle {
+				padding: 30rpx;
+				font-size: 30rpx;
+				font-weight: 1000;
+				color: #000;
+			}
+
+			.info-xinxi {
+				padding: 30rpx;
+
+				.money {
+					font-size: 39rpx;
+					font-weight: 1000;
+					color: #fa5c00;
+					padding-right: 10rpx;
+				}
+
+				.other {
+					font-size: 29rpx;
+					font-weight: 1000;
+					color: #000;
+				}
+			}
+
+			.jiedan-caozuo {
+				width: 100%;
+				padding: 30rpx;
+				display: flex;
+
+				.jiedan-zi {
+					align-self: start;
+					font-size: 29rpx;
+					font-weight: 1000;
+					color: #000;
+				}
+
+				.jiedan-number-box {
+					padding-left: 50%;
+				}
+			}
+		}
+
+		.jiedan-botton {
+			z-index: 999;
+			width: 100%;
+			background-color: #fff;
+			position: fixed;
+			bottom: 0;
+			padding-top: 30rpx;
+			padding-bottom: 90rpx;
+			padding-left: 30rpx;
+			padding-right: 30rpx;
 		}
 	}
 </style>
