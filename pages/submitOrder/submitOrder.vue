@@ -127,10 +127,17 @@
 		},
 		methods: {
 			onSubmit() {
-				uni.switchTab({
-					url: "/pages/tabBar/order/order"
-				});
 				console.log("去订单页");
+				uni.showToast({
+					icon: 'success',
+					title: '提交成功',
+					duration: 1500,
+				});
+				setTimeout(() => {
+					uni.switchTab({
+						url: "/pages/tabBar/order/order"
+					});
+				}, 2000);
 			}
 		}
 	}
