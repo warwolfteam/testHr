@@ -324,6 +324,16 @@
 			},
 			onSubmit() {
 				console.log("点击弹出层立即接单按钮");
+				console.log("this.renshu", this.renshu);
+				console.log("this.item.peopleNumber", this.item.peopleNumber);
+				console.log("this.item.name", this.item.name);
+				console.log("this.item.fanxian", this.item.fanxian);
+				console.log("this.item.fanyongxinxi.fanYongMoney", this.item.fanyongxinxi.fanYongMoney);
+				uni.navigateTo({
+					url: "/pages/taskDetail/lianxikefu?renshu=" + this.renshu + "&peopleNumber=" + this.item
+						.peopleNumber + "&name=" + this.item.name + "&fanxian=" + this.item.fanxian +
+						"&fanYongMoney=" + this.item.fanyongxinxi.fanYongMoney
+				})
 			}
 		}
 	}

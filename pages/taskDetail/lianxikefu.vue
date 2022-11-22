@@ -28,6 +28,9 @@
 				bgImageURL: 'https://me.heimaoba.cn/static/image/qrbg.png',
 			}
 		},
+		onLoad: function(option) {
+			console.log("option:", option);
+		},
 		mounted() {},
 		methods: {
 			createQrCode() {
