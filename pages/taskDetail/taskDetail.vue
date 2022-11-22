@@ -330,7 +330,7 @@
 				console.log("this.item.fanxian", this.item.fanxian);
 				console.log("this.item.fanyongxinxi.fanYongMoney", this.item.fanyongxinxi.fanYongMoney);
 				uni.navigateTo({
-					url: "/pages/taskDetail/lianxikefu?renshu=" + this.renshu + "&peopleNumber=" + this.item
+					url: "/pages/submitOrder/submitOrder?renshu=" + this.renshu + "&peopleNumber=" + this.item
 						.peopleNumber + "&name=" + this.item.name + "&fanxian=" + this.item.fanxian +
 						"&fanYongMoney=" + this.item.fanyongxinxi.fanYongMoney
 				})

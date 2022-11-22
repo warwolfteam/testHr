@@ -120,6 +120,17 @@
 			}
 		}]
 	}, {
+		"root": "pages/submitOrder",
+		"pages": [{
+			"path": "submitOrder",
+			"style": {
+				"navigationBarTitleText": "确认接单",
+				"app-plus": {
+					"titleNView": true
+				}
+			}
+		}]
+	}, {
 		"root": "pages/candidateList",
 		"pages": [{
 			"path": "candidateList",
